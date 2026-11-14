@@ -1,0 +1,9 @@
+node_modules
+data/
+.env
+*.key
+telegraph-ideation/
+HACKATHON.md
+docs/posts-to-send.md
+.claude/
+web/dist

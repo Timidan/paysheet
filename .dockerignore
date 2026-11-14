@@ -1,0 +1,12 @@
+node_modules
+web/node_modules
+web/dist
+data
+*.key
+.git
+telegraph-ideation
+HACKATHON.md
+docs
+.claude
+test
+scripts

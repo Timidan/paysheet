@@ -1,0 +1,14 @@
+services:
+  web:
+    build: .
+    container_name: paysheet-web
+    restart: unless-stopped
+    volumes:
+      - ./app.key:/run/paysheet.key:ro
+      - ./data:/app/data
+    networks: [public_proxy]
+    cpus: 0.5
+    mem_limit: 256m
+networks:
+  public_proxy:
+    external: true

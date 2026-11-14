@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500&display=swap");
+@import "tailwindcss";
+
+/* Sample A. Banknote paper, engraver's green, one red for held. */
+@theme {
+  --font-sans: "Onest", system-ui, sans-serif;
+  --font-mono: "Spline Sans Mono", ui-monospace, monospace;
+  --color-paper: #fbfaf4;
+  --color-sheet: #ffffff;
+  --color-ink: #10231c;
+  --color-soft: #51625a;
+  --color-line: #dfe3d8;
+  --color-wash: #eef2e8;
+  --color-green: #0d5a3c;
+  --color-held: #b0301a;
+  --color-held-wash: #fbebe6;
+}
+
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--color-paper); color: var(--color-ink); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+:focus-visible { outline: 2px solid var(--color-green); outline-offset: 3px; border-radius: 4px; }
+::selection { background: #cfe6d8; }
+
+.a-btn { transition: transform 120ms ease, background-color 160ms ease, box-shadow 160ms ease; }
+.a-btn:active { transform: translateY(1px) scale(0.985); }
+
+/* The stamp: a word in a ruled box, slightly turned, like ink pressed on paper. */
+.a-stamp { display: inline-block; font-weight: 700; letter-spacing: 0.01em; padding: 1px 9px 2px; border: 2px solid currentColor; border-radius: 5px; transform: rotate(-3deg); line-height: 1.25; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .a-btn { transition: none; }
+}
+
+/* A row that is being worked on: a short bar sweeps under the word until the answer lands. */
+.a-working { position: relative; display: inline-block; padding-bottom: 5px; }
+.a-working::after { content: ""; position: absolute; left: 0; bottom: 0; height: 2px; width: 100%; background: linear-gradient(90deg, transparent, var(--color-green), transparent); background-size: 60% 100%; background-repeat: no-repeat; animation: a-sweep 1.1s linear infinite; }
+@keyframes a-sweep { from { background-position: -150% 0; } to { background-position: 250% 0; } }
+
+.a-field { width: 100%; min-width: 0; border: 1px solid var(--color-line); border-radius: 6px; background: var(--color-sheet); padding: 9px 11px; transition: border-color 140ms ease, box-shadow 140ms ease; }
+.a-field:hover { border-color: #b9c2b4; }
+.a-field:focus-visible { outline: none; border-color: var(--color-green); box-shadow: 0 0 0 3px #d5eadc; }
+.a-field::placeholder { color: #93a097; }
+
+@media (prefers-reduced-motion: reduce) {
+  .a-working::after { animation: none; background-size: 100% 100%; background-position: 0 0; opacity: 0.4; }
+}
