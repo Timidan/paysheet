@@ -63,7 +63,9 @@ export function Checks({ row }) {
           <span className={c.verdict === "clean" ? "text-ink" : "font-semibold text-held"}>{answer[c.verdict]}</span>
           {c.receipt?.tx_hash
             ? <Tx hash={c.receipt.tx_hash} className="col-start-2 font-mono text-[12px] text-soft">0.01 USDC, receipt {short(c.receipt.receipt_hash, 8, 6)}</Tx>
-            : <span className="col-start-2 text-[12.5px] text-soft">{c.error || "Not charged"}</span>}
+            : c.receipt
+              ? <span className="col-start-2 font-mono text-[12px] text-soft">0.01 USDC, receipt {short(c.receipt.receipt_hash, 8, 6)}</span>
+              : <span className="col-start-2 text-[12.5px] text-soft">{c.error || (c.status === 200 ? "No receipt came back" : "Not charged")}</span>}
         </li>
       ))}
     </ul>

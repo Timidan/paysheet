@@ -5,44 +5,48 @@
     "decision": "held_match",
     "checks": [
       {
-        "miner": "731002",
-        "minerName": "Counterproof Sanctions Screener",
+        "miner": "64175",
+        "minerName": "OathCast Sanctions Screen",
         "kind": "name",
         "subject": "Rosneft",
         "verdict": "match",
         "status": 200,
-        "answeredBy": "731002",
+        "answeredBy": "64175",
         "echoed": "Rosneft",
         "result": {
           "name": "Rosneft",
           "matched": true,
           "matches": [
-            "ROSNEFT"
+            "OPEN JOINT-STOCK COMPANY ROSNEFT OIL COMPANY"
           ],
-          "lists": null,
+          "lists": [
+            "OFAC SDN",
+            "OFAC Consolidated (non-SDN)",
+            "UN Security Council Consolidated",
+            "EU Consolidated Financial Sanctions"
+          ],
           "match_score": 1
         },
         "fieldStatus": {
           "name": "ok",
           "matched": "ok",
           "matches": "ok",
-          "lists": "missing",
+          "lists": "ok",
           "match_score": "ok"
         },
         "receipt": {
-          "receipt_hash": "0x40e94ffa719427f8f8b2881fea1bedbc87f01e639f47d5797045f226d185e6c0",
-          "rail": "x402",
-          "payer": "0x4C8E60D549fa427Da628882d76d4df8287e03E59",
-          "miner": "5138",
+          "receipt_hash": "0x3a1cffc7b58e20f62e513dd82962462b5e99bc49b0eee07de1af4ca8ff371b72",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
+          "miner": "5287",
           "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
           "amount_uusdc": "10000",
-          "epoch_id": 0,
-          "settlement": "onchain",
-          "chain": "eip155:84532",
-          "tx_hash": "0x1cdc9c7760f9c9ab45957791176152dec9423ffe4a883996542e106bc9e28a82",
-          "timestamp": 1794576930
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998520
         },
-        "ms": 7607
+        "ms": 9496
       },
       {
         "miner": "710637",
@@ -68,19 +72,18 @@
           "match_score": "ok"
         },
         "receipt": {
-          "receipt_hash": "0x4a0e558bf054f34884dfdbe00c6b2fcbec8129d6f145f1f32d645785eb26f9e7",
-          "rail": "x402",
-          "payer": "0x4C8E60D549fa427Da628882d76d4df8287e03E59",
+          "receipt_hash": "0x0b62f38ad71f6a735e2a420b565a1f95b0fe51e0affd7ec96a32defadc62718e",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
           "miner": "4860",
           "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
           "amount_uusdc": "10000",
-          "epoch_id": 0,
-          "settlement": "onchain",
-          "chain": "eip155:84532",
-          "tx_hash": "0xf84f31f3d4713f1ac0d5f944613c8d4efda8e4ccaa93e7994a5df2fee6753adf",
-          "timestamp": 1794576939
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998541
         },
-        "ms": 16150
+        "ms": 30003
       }
     ]
   },
@@ -90,46 +93,48 @@
     "decision": "held_match",
     "checks": [
       {
-        "miner": "731002",
-        "minerName": "Counterproof Sanctions Screener",
+        "miner": "64175",
+        "minerName": "OathCast Sanctions Screen",
         "kind": "name",
         "subject": "Rossneft Oil Company",
         "verdict": "match",
         "status": 200,
-        "answeredBy": "731002",
+        "answeredBy": "64175",
         "echoed": "Rossneft Oil Company",
         "result": {
           "name": "Rossneft Oil Company",
           "matched": true,
           "matches": [
-            "PJSC Rosneft Oil Company",
-            "OJSC ROSNEFT OIL COMPANY",
-            "OJSC ROSNEFT OIL COMPANY"
+            "OPEN JOINT-STOCK COMPANY ROSNEFT OIL COMPANY"
           ],
-          "lists": null,
-          "match_score": 0.981
+          "lists": [
+            "OFAC SDN",
+            "OFAC Consolidated (non-SDN)",
+            "UN Security Council Consolidated",
+            "EU Consolidated Financial Sanctions"
+          ],
+          "match_score": 0.956522
         },
         "fieldStatus": {
           "name": "ok",
           "matched": "ok",
           "matches": "ok",
-          "lists": "missing",
+          "lists": "ok",
           "match_score": "ok"
         },
         "receipt": {
-          "receipt_hash": "0x80cf12d022aa5611ec88121b15e7f96a0ebab8a8ccf9671b36981524277edd0c",
-          "rail": "x402",
-          "payer": "0x4C8E60D549fa427Da628882d76d4df8287e03E59",
-          "miner": "5138",
+          "receipt_hash": "0x0f28477ccc09672f95a4d63fbfc7b6fc38dbb275c702e0054e0c949f0725e3dd",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
+          "miner": "5287",
           "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
           "amount_uusdc": "10000",
-          "epoch_id": 0,
-          "settlement": "onchain",
-          "chain": "eip155:84532",
-          "tx_hash": "0xaf251ee098940d000a972e27665d057ee665a52170ceec5636c4df92207ebcbc",
-          "timestamp": 1794576931
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998520
         },
-        "ms": 8310
+        "ms": 9170
       },
       {
         "miner": "710637",
@@ -141,33 +146,46 @@
         "answeredBy": "710637",
         "echoed": "Rossneft Oil Company",
         "result": {
-          "name": null,
-          "matched": null,
+          "name": "Rossneft Oil Company",
+          "matched": true,
           "matches": null,
-          "lists": null,
+          "lists": [
+            "OFAC SDN",
+            "OFAC Consolidated (non-SDN)",
+            "UK Sanctions List (entities only)",
+            "Canada autonomous sanctions (entities only)",
+            "EU Financial Sanctions (entities only)",
+            "US BIS Entity List (export controls)",
+            "US BIS Military End User List (export controls)",
+            "US BIS Denied Persons List (dated standard export-denial orders)",
+            "UK Sanctions List (ships)",
+            "US BIS Entity List (additional primary-row corroborated records)",
+            "Canada autonomous sanctions (November 5 additional entities)",
+            "Canada autonomous sanctions (corroborated ships)",
+            "Canada autonomous sanctions (November 5 Iranian entity amendment)"
+          ],
           "match_score": 0.95
         },
         "fieldStatus": {
-          "name": "unavailable",
-          "matched": "unavailable",
-          "matches": "unavailable",
-          "lists": "unavailable",
+          "name": "ok",
+          "matched": "ok",
+          "matches": "rejected",
+          "lists": "ok",
           "match_score": "ok"
         },
         "receipt": {
-          "receipt_hash": "0x0a249647c663e513ed1733cdcf28e8d9fc4219828394c1d48901fd906db13393",
-          "rail": "x402",
-          "payer": "0x4C8E60D549fa427Da628882d76d4df8287e03E59",
+          "receipt_hash": "0xcf211e153f70c22cfe4960e6cad965ec4f79c65f0426a446e79ad3674b397b8f",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
           "miner": "4860",
           "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
           "amount_uusdc": "10000",
-          "epoch_id": 0,
-          "settlement": "onchain",
-          "chain": "eip155:84532",
-          "tx_hash": "0xc581a3fb9c7565ff3e87ea7fda7cfa97a32b8f5327dc2023e802b1905b6fe90c",
-          "timestamp": 1794576938
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998536
         },
-        "ms": 15748
+        "ms": 25414
       }
     ]
   },
@@ -177,46 +195,50 @@
     "decision": "held_match",
     "checks": [
       {
-        "miner": "731002",
-        "minerName": "Counterproof Sanctions Screener",
+        "miner": "64175",
+        "minerName": "OathCast Sanctions Screen",
         "kind": "name",
         "subject": "Sberbank",
         "verdict": "match",
         "status": 200,
-        "answeredBy": "731002",
+        "answeredBy": "64175",
         "echoed": "Sberbank",
         "result": {
           "name": "Sberbank",
           "matched": true,
           "matches": [
-            "PJSC SBERBANK",
-            "JSC SBERBANK",
-            "Sberbank"
+            "JOINT STOCK COMPANY SBERBANK",
+            "Сбербанк",
+            "PUBLIC JOINT STOCK COMPANY SBERBANK OF RUSSIA"
           ],
-          "lists": null,
+          "lists": [
+            "OFAC SDN",
+            "OFAC Consolidated (non-SDN)",
+            "UN Security Council Consolidated",
+            "EU Consolidated Financial Sanctions"
+          ],
           "match_score": 1
         },
         "fieldStatus": {
           "name": "ok",
           "matched": "ok",
           "matches": "ok",
-          "lists": "missing",
+          "lists": "ok",
           "match_score": "ok"
         },
         "receipt": {
-          "receipt_hash": "0xbe89e402f9c1cc2ef54940b624e9d60fc2d2a1963d1068870c6ddb326f829eab",
-          "rail": "x402",
-          "payer": "0x4C8E60D549fa427Da628882d76d4df8287e03E59",
-          "miner": "5138",
+          "receipt_hash": "0xc2320776e6be8056d5535afc51d0eb16a472ad17c6a8d10fbe23ed2a6230dcd4",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
+          "miner": "5287",
           "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
           "amount_uusdc": "10000",
-          "epoch_id": 0,
-          "settlement": "onchain",
-          "chain": "eip155:84532",
-          "tx_hash": "0x10745f69d81c0f310586fabb61dba74ec5a0d82183bd1b51adbe005ec625ba01",
-          "timestamp": 1794576930
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998520
         },
-        "ms": 7659
+        "ms": 9515
       },
       {
         "miner": "710637",
@@ -242,19 +264,18 @@
           "match_score": "ok"
         },
         "receipt": {
-          "receipt_hash": "0x14b4ecc911748d71d9bb05a9785e3849c0770560e6fc98a8833382cfb11bb49c",
-          "rail": "x402",
-          "payer": "0x4C8E60D549fa427Da628882d76d4df8287e03E59",
+          "receipt_hash": "0x5bea37f668e0e3c6996fcb4ae900ead6b948185fa8a1a9acccc3ea554b550c08",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
           "miner": "4860",
           "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
           "amount_uusdc": "10000",
-          "epoch_id": 0,
-          "settlement": "onchain",
-          "chain": "eip155:84532",
-          "tx_hash": "0x12fa5ca5281dbd62427df194a66b96c9e1ea44e0a234c848ecb00123ca169b45",
-          "timestamp": 1794576937
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998540
         },
-        "ms": 14731
+        "ms": 28998
       }
     ]
   },
@@ -264,46 +285,52 @@
     "decision": "held_match",
     "checks": [
       {
-        "miner": "731002",
-        "minerName": "Counterproof Sanctions Screener",
+        "miner": "64175",
+        "minerName": "OathCast Sanctions Screen",
         "kind": "name",
         "subject": "VTB Bank PJSC",
         "verdict": "match",
         "status": 200,
-        "answeredBy": "731002",
+        "answeredBy": "64175",
         "echoed": "VTB Bank PJSC",
         "result": {
           "name": "VTB Bank PJSC",
           "matched": true,
           "matches": [
+            "VTB BANK, PJSC",
             "JSC VTB BANK",
-            "VTB Bank",
-            "VTB Bank (PJSC)"
+            "VTB BANK PUBLIC JOINT STOCK COMPANY",
+            "ВТБ/Внешторгбанк",
+            "ООО “ВБ Банк\""
           ],
-          "lists": null,
+          "lists": [
+            "OFAC SDN",
+            "OFAC Consolidated (non-SDN)",
+            "UN Security Council Consolidated",
+            "EU Consolidated Financial Sanctions"
+          ],
           "match_score": 1
         },
         "fieldStatus": {
           "name": "ok",
           "matched": "ok",
           "matches": "ok",
-          "lists": "missing",
+          "lists": "ok",
           "match_score": "ok"
         },
         "receipt": {
-          "receipt_hash": "0xd20b75d31a736b74b78b48adf8fdaa7f1a65c1076c77cb97591b93334784fd7c",
-          "rail": "x402",
-          "payer": "0x4C8E60D549fa427Da628882d76d4df8287e03E59",
-          "miner": "5138",
+          "receipt_hash": "0xaf123350f125967f81d61421a3453c5149b4a69c63858045c199c481c889447f",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
+          "miner": "5287",
           "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
           "amount_uusdc": "10000",
-          "epoch_id": 0,
-          "settlement": "onchain",
-          "chain": "eip155:84532",
-          "tx_hash": "0x6f7f2375bf7f7a8977d9be980ac5b08bc5ac5f889c29d824bf564cf835d8d6d0",
-          "timestamp": 1794576930
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998521
         },
-        "ms": 7753
+        "ms": 10054
       },
       {
         "miner": "710637",
@@ -329,19 +356,18 @@
           "match_score": "ok"
         },
         "receipt": {
-          "receipt_hash": "0x66908f4a295c6ae307c78785e43d98374ff6c561d6d1931fcc4bb2b0d5c10ffd",
-          "rail": "x402",
-          "payer": "0x4C8E60D549fa427Da628882d76d4df8287e03E59",
+          "receipt_hash": "0x3f1da37e76e648ceba258034e38d84b50be61424499996aa90632faf812820d4",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
           "miner": "4860",
           "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
           "amount_uusdc": "10000",
-          "epoch_id": 0,
-          "settlement": "onchain",
-          "chain": "eip155:84532",
-          "tx_hash": "0x3b4bb65aa375e339fbc8e841a07d22b0f5181abfb8151009e70e90682bd32b77",
-          "timestamp": 1794576938
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998539
         },
-        "ms": 15378
+        "ms": 28419
       }
     ]
   },
@@ -351,42 +377,46 @@
     "decision": "held_match",
     "checks": [
       {
-        "miner": "731002",
-        "minerName": "Counterproof Sanctions Screener",
+        "miner": "64175",
+        "minerName": "OathCast Sanctions Screen",
         "kind": "name",
         "subject": "Gazprombank",
         "verdict": "match",
         "status": 200,
-        "answeredBy": "731002",
+        "answeredBy": "64175",
         "echoed": "Gazprombank",
         "result": {
           "name": "Gazprombank",
-          "matched": true,
+          "matched": false,
           "matches": null,
-          "lists": null,
-          "match_score": 1
+          "lists": [
+            "OFAC SDN",
+            "OFAC Consolidated (non-SDN)",
+            "UN Security Council Consolidated",
+            "EU Consolidated Financial Sanctions"
+          ],
+          "match_score": 0.733333
         },
         "fieldStatus": {
           "name": "ok",
           "matched": "ok",
-          "matches": "rejected",
-          "lists": "missing",
+          "matches": "missing",
+          "lists": "ok",
           "match_score": "ok"
         },
         "receipt": {
-          "receipt_hash": "0x12a2415294e5316d2952985c3e855bb4832d086192f0da43498161c9494b2ba0",
-          "rail": "x402",
-          "payer": "0x4C8E60D549fa427Da628882d76d4df8287e03E59",
-          "miner": "5138",
+          "receipt_hash": "0x4d35730b4003ffdc7f3d6285e696a8de9e691d72345726aeb3c50ed1a371b7bd",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
+          "miner": "5287",
           "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
           "amount_uusdc": "10000",
-          "epoch_id": 0,
-          "settlement": "onchain",
-          "chain": "eip155:84532",
-          "tx_hash": "0xf47fa8ca4db35c5da09114edfff629cf30dcd48690181d54ff86cdf0f040d9ee",
-          "timestamp": 1794576931
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998519
         },
-        "ms": 8064
+        "ms": 8563
       },
       {
         "miner": "710637",
@@ -398,33 +428,46 @@
         "answeredBy": "710637",
         "echoed": "Gazprombank",
         "result": {
-          "name": null,
-          "matched": null,
+          "name": "Gazprombank",
+          "matched": true,
           "matches": null,
-          "lists": null,
+          "lists": [
+            "OFAC SDN",
+            "OFAC Consolidated (non-SDN)",
+            "UK Sanctions List (entities only)",
+            "Canada autonomous sanctions (entities only)",
+            "EU Financial Sanctions (entities only)",
+            "US BIS Entity List (export controls)",
+            "US BIS Military End User List (export controls)",
+            "US BIS Denied Persons List (dated standard export-denial orders)",
+            "UK Sanctions List (ships)",
+            "US BIS Entity List (additional primary-row corroborated records)",
+            "Canada autonomous sanctions (November 5 additional entities)",
+            "Canada autonomous sanctions (corroborated ships)",
+            "Canada autonomous sanctions (November 5 Iranian entity amendment)"
+          ],
           "match_score": 1
         },
         "fieldStatus": {
-          "name": "unavailable",
-          "matched": "unavailable",
-          "matches": "unavailable",
-          "lists": "unavailable",
+          "name": "ok",
+          "matched": "ok",
+          "matches": "rejected",
+          "lists": "ok",
           "match_score": "ok"
         },
         "receipt": {
-          "receipt_hash": "0x2ff8cb7275e4bf26cddb600b06b480d44ac669168a3dcf4ff3c843b6615d7cb7",
-          "rail": "x402",
-          "payer": "0x4C8E60D549fa427Da628882d76d4df8287e03E59",
+          "receipt_hash": "0x9da6ee3e7d33017c7660c123b16781c6c697d12628b50bea95007a7f9561bf6f",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
           "miner": "4860",
           "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
           "amount_uusdc": "10000",
-          "epoch_id": 0,
-          "settlement": "onchain",
-          "chain": "eip155:84532",
-          "tx_hash": "0x88b79c75c81adfd1f187459fb99f524180b3b29402e8d1f5c874b2e87a494b51",
-          "timestamp": 1794576937
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998536
         },
-        "ms": 14753
+        "ms": 25077
       }
     ]
   },
@@ -434,45 +477,49 @@
     "decision": "held_match",
     "checks": [
       {
-        "miner": "731002",
-        "minerName": "Counterproof Sanctions Screener",
+        "miner": "64175",
+        "minerName": "OathCast Sanctions Screen",
         "kind": "name",
         "subject": "Mahan Air",
         "verdict": "match",
         "status": 200,
-        "answeredBy": "731002",
+        "answeredBy": "64175",
         "echoed": "Mahan Air",
         "result": {
           "name": "Mahan Air",
           "matched": true,
           "matches": [
             "MAHAN AIR",
-            "Mahan Air"
+            "ماهان ایر"
           ],
-          "lists": null,
+          "lists": [
+            "OFAC SDN",
+            "OFAC Consolidated (non-SDN)",
+            "UN Security Council Consolidated",
+            "EU Consolidated Financial Sanctions"
+          ],
           "match_score": 1
         },
         "fieldStatus": {
           "name": "ok",
           "matched": "ok",
           "matches": "ok",
-          "lists": "missing",
+          "lists": "ok",
           "match_score": "ok"
         },
         "receipt": {
-          "receipt_hash": "0x34643fcd88388bc0a4f5b23a12c4831e3ddae919f8a090bf8872f1bcacbf1c01",
-          "rail": "x402",
-          "payer": "0x4C8E60D549fa427Da628882d76d4df8287e03E59",
-          "miner": "5138",
+          "receipt_hash": "0x9a520cd92e1094013ed9670d16f729aa16045c22c0c9f06c464d8caa3aa4c06f",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
+          "miner": "5287",
           "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
           "amount_uusdc": "10000",
-          "epoch_id": 0,
-          "settlement": "onchain",
-          "chain": "eip155:84532",
-          "tx_hash": "0x19a925f8b3b77c3cec0a2814d06ddd80ecd5461a22b1cdef82c104a3131860b2",
-          "timestamp": 1794576945
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998547
         },
-        "ms": 6007
+        "ms": 6235
       },
       {
         "miner": "710637",
@@ -498,19 +545,18 @@
           "match_score": "ok"
         },
         "receipt": {
-          "receipt_hash": "0x898bb5e7f41870e2639ec4c258b5875f70920360388794556eaa0787b8ddf48c",
-          "rail": "x402",
-          "payer": "0x4C8E60D549fa427Da628882d76d4df8287e03E59",
+          "receipt_hash": "0x7680b65d704b3470065080ca08b77c9e3d3ef49cf239b0d0c9a1842d994bc978",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
           "miner": "4860",
           "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
           "amount_uusdc": "10000",
-          "epoch_id": 0,
-          "settlement": "onchain",
-          "chain": "eip155:84532",
-          "tx_hash": "0x03978e0a1a28b36f4db349e8f6a51e93b6659ace8f9f0b6aff9d9c4499bbe017",
-          "timestamp": 1794576952
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998568
         },
-        "ms": 13093
+        "ms": 27427
       }
     ]
   },
@@ -520,46 +566,50 @@
     "decision": "held_match",
     "checks": [
       {
-        "miner": "731002",
-        "minerName": "Counterproof Sanctions Screener",
+        "miner": "64175",
+        "minerName": "OathCast Sanctions Screen",
         "kind": "name",
         "subject": "Wagner Group",
         "verdict": "match",
         "status": 200,
-        "answeredBy": "731002",
+        "answeredBy": "64175",
         "echoed": "Wagner Group",
         "result": {
           "name": "Wagner Group",
           "matched": true,
           "matches": [
-            "Wagner Group",
-            "WAGNER GROUP",
-            "Wagner Group"
+            "PRIVATE MILITARY COMPANY 'WAGNER'",
+            "League",
+            "Vagner  Group"
           ],
-          "lists": null,
+          "lists": [
+            "OFAC SDN",
+            "OFAC Consolidated (non-SDN)",
+            "UN Security Council Consolidated",
+            "EU Consolidated Financial Sanctions"
+          ],
           "match_score": 1
         },
         "fieldStatus": {
           "name": "ok",
           "matched": "ok",
           "matches": "ok",
-          "lists": "missing",
+          "lists": "ok",
           "match_score": "ok"
         },
         "receipt": {
-          "receipt_hash": "0xbc982d82533c34643672215ba4facc3fb408aa9e2c331727ac7f4309c7d2bebd",
-          "rail": "x402",
-          "payer": "0x4C8E60D549fa427Da628882d76d4df8287e03E59",
-          "miner": "5138",
+          "receipt_hash": "0xe2ab0b272b89424894bb5c58f6addc75271ad05336f060346f28cf765190b2bf",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
+          "miner": "5287",
           "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
           "amount_uusdc": "10000",
-          "epoch_id": 0,
-          "settlement": "onchain",
-          "chain": "eip155:84532",
-          "tx_hash": "0x3b4bf53c1e9ff47ed8c898a66aa7920f3faaf0264dc94e288966fb0e63b22eed",
-          "timestamp": 1794576945
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998548
         },
-        "ms": 5839
+        "ms": 7852
       },
       {
         "miner": "710637",
@@ -585,19 +635,18 @@
           "match_score": "ok"
         },
         "receipt": {
-          "receipt_hash": "0xd3b0be91d6504f36257361e4247134b46739d7085685611561d769cc271d31f0",
-          "rail": "x402",
-          "payer": "0x4C8E60D549fa427Da628882d76d4df8287e03E59",
+          "receipt_hash": "0x7cbc1da4ac3bf838029e5b59bdd911ac1dba627faab98282287d60035e76b1b6",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
           "miner": "4860",
           "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
           "amount_uusdc": "10000",
-          "epoch_id": 0,
-          "settlement": "onchain",
-          "chain": "eip155:84532",
-          "tx_hash": "0x73309575a9e6ada98b538532af04e191053b94b89d8ecf0dfca2b975f98520d1",
-          "timestamp": 1794576953
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998570
         },
-        "ms": 13631
+        "ms": 28973
       }
     ]
   },
@@ -607,13 +656,13 @@
     "decision": "held_match",
     "checks": [
       {
-        "miner": "731002",
-        "minerName": "Counterproof Sanctions Screener",
+        "miner": "64175",
+        "minerName": "OathCast Sanctions Screen",
         "kind": "name",
         "subject": "Lazarus Group",
         "verdict": "match",
         "status": 200,
-        "answeredBy": "731002",
+        "answeredBy": "64175",
         "echoed": "Lazarus Group",
         "result": {
           "name": "Lazarus Group",
@@ -621,30 +670,34 @@
           "matches": [
             "LAZARUS GROUP"
           ],
-          "lists": null,
+          "lists": [
+            "OFAC SDN",
+            "OFAC Consolidated (non-SDN)",
+            "UN Security Council Consolidated",
+            "EU Consolidated Financial Sanctions"
+          ],
           "match_score": 1
         },
         "fieldStatus": {
           "name": "ok",
           "matched": "ok",
           "matches": "ok",
-          "lists": "missing",
+          "lists": "ok",
           "match_score": "ok"
         },
         "receipt": {
-          "receipt_hash": "0x39a01bbb64ed21b30c4b70bfe14219f994da8dd491893e7cca49db23dc008c62",
-          "rail": "x402",
-          "payer": "0x4C8E60D549fa427Da628882d76d4df8287e03E59",
-          "miner": "5138",
+          "receipt_hash": "0xeadc4476d7459d24ef99848be602409b417c7e52ce949eea6609d017a0c9c799",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
+          "miner": "5287",
           "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
           "amount_uusdc": "10000",
-          "epoch_id": 0,
-          "settlement": "onchain",
-          "chain": "eip155:84532",
-          "tx_hash": "0x43e291cb5295c76c595503679f779121ccb804c4621b7d3eec5a720a6ad2da6e",
-          "timestamp": 1794576945
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998547
         },
-        "ms": 5918
+        "ms": 6619
       },
       {
         "miner": "710637",
@@ -656,33 +709,46 @@
         "answeredBy": "710637",
         "echoed": "Lazarus Group",
         "result": {
-          "name": null,
-          "matched": null,
+          "name": "Lazarus Group",
+          "matched": true,
           "matches": null,
-          "lists": null,
+          "lists": [
+            "OFAC SDN",
+            "OFAC Consolidated (non-SDN)",
+            "UK Sanctions List (entities only)",
+            "Canada autonomous sanctions (entities only)",
+            "EU Financial Sanctions (entities only)",
+            "US BIS Entity List (export controls)",
+            "US BIS Military End User List (export controls)",
+            "US BIS Denied Persons List (dated standard export-denial orders)",
+            "UK Sanctions List (ships)",
+            "US BIS Entity List (additional primary-row corroborated records)",
+            "Canada autonomous sanctions (November 5 additional entities)",
+            "Canada autonomous sanctions (corroborated ships)",
+            "Canada autonomous sanctions (November 5 Iranian entity amendment)"
+          ],
           "match_score": 1
         },
         "fieldStatus": {
-          "name": "unavailable",
-          "matched": "unavailable",
-          "matches": "unavailable",
-          "lists": "unavailable",
+          "name": "ok",
+          "matched": "ok",
+          "matches": "rejected",
+          "lists": "ok",
           "match_score": "ok"
         },
         "receipt": {
-          "receipt_hash": "0x4bddcfd0d6f356dc2da1f36f5e0e1978bbc915835e5864ef271187c70c4d6038",
-          "rail": "x402",
-          "payer": "0x4C8E60D549fa427Da628882d76d4df8287e03E59",
+          "receipt_hash": "0x24a6f6fd352ede6ce59592e5a2d109a8dc8f258df7f029e63a49170145e8386a",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
           "miner": "4860",
           "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
           "amount_uusdc": "10000",
-          "epoch_id": 0,
-          "settlement": "onchain",
-          "chain": "eip155:84532",
-          "tx_hash": "0x38d5e620328df1cf7e0bd4d333decb0d12e75c39cd9917e9170ed877f00e1d87",
-          "timestamp": 1794576953
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998558
         },
-        "ms": 14061
+        "ms": 17504
       }
     ]
   },
@@ -692,45 +758,48 @@
     "decision": "held_match",
     "checks": [
       {
-        "miner": "731002",
-        "minerName": "Counterproof Sanctions Screener",
+        "miner": "64175",
+        "minerName": "OathCast Sanctions Screen",
         "kind": "name",
         "subject": "Hizballah",
         "verdict": "match",
         "status": 200,
-        "answeredBy": "731002",
+        "answeredBy": "64175",
         "echoed": "Hizballah",
         "result": {
           "name": "Hizballah",
           "matched": true,
           "matches": [
-            "HIZBALLAH",
-            "Hizballah"
+            "HIZBALLAH"
           ],
-          "lists": null,
+          "lists": [
+            "OFAC SDN",
+            "OFAC Consolidated (non-SDN)",
+            "UN Security Council Consolidated",
+            "EU Consolidated Financial Sanctions"
+          ],
           "match_score": 1
         },
         "fieldStatus": {
           "name": "ok",
           "matched": "ok",
           "matches": "ok",
-          "lists": "missing",
+          "lists": "ok",
           "match_score": "ok"
         },
         "receipt": {
-          "receipt_hash": "0xb1d0c5807d6d33a3d9d9ce7b9bf5b194ca0f97e3686d9d78bf612067726a50d7",
-          "rail": "x402",
-          "payer": "0x4C8E60D549fa427Da628882d76d4df8287e03E59",
-          "miner": "5138",
+          "receipt_hash": "0xeba149197013856faca6cfba59de2523526741d61cf513f44daf35852c71b922",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
+          "miner": "5287",
           "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
           "amount_uusdc": "10000",
-          "epoch_id": 0,
-          "settlement": "onchain",
-          "chain": "eip155:84532",
-          "tx_hash": "0x6cfbb8b4774e540cae6ef58c38d2f60ac7d1eff5da2e61d2cb96b4770193be82",
-          "timestamp": 1794576945
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998550
         },
-        "ms": 6086
+        "ms": 9726
       },
       {
         "miner": "710637",
@@ -742,33 +811,46 @@
         "answeredBy": "710637",
         "echoed": "Hizballah",
         "result": {
-          "name": null,
-          "matched": null,
+          "name": "Hizballah",
+          "matched": true,
           "matches": null,
-          "lists": null,
+          "lists": [
+            "OFAC SDN",
+            "OFAC Consolidated (non-SDN)",
+            "UK Sanctions List (entities only)",
+            "Canada autonomous sanctions (entities only)",
+            "EU Financial Sanctions (entities only)",
+            "US BIS Entity List (export controls)",
+            "US BIS Military End User List (export controls)",
+            "US BIS Denied Persons List (dated standard export-denial orders)",
+            "UK Sanctions List (ships)",
+            "US BIS Entity List (additional primary-row corroborated records)",
+            "Canada autonomous sanctions (November 5 additional entities)",
+            "Canada autonomous sanctions (corroborated ships)",
+            "Canada autonomous sanctions (November 5 Iranian entity amendment)"
+          ],
           "match_score": 1
         },
         "fieldStatus": {
-          "name": "unavailable",
-          "matched": "unavailable",
-          "matches": "unavailable",
-          "lists": "unavailable",
+          "name": "ok",
+          "matched": "ok",
+          "matches": "rejected",
+          "lists": "ok",
           "match_score": "ok"
         },
         "receipt": {
-          "receipt_hash": "0x1a14e23918bd0e768a964775bb4623f44668dd98bf460ec564f0f9e988363cf0",
-          "rail": "x402",
-          "payer": "0x4C8E60D549fa427Da628882d76d4df8287e03E59",
+          "receipt_hash": "0xccc851ee742f8b46fc3d30d5254a7838ced1f2eb841c77792eeef843c9c43255",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
           "miner": "4860",
           "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
           "amount_uusdc": "10000",
-          "epoch_id": 0,
-          "settlement": "onchain",
-          "chain": "eip155:84532",
-          "tx_hash": "0x485874fb284f5f79f13047784d18dff56af69d182ff4c62d8041a8529bd94070",
-          "timestamp": 1794576952
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998564
         },
-        "ms": 13558
+        "ms": 22973
       }
     ]
   },
@@ -778,46 +860,52 @@
     "decision": "held_match",
     "checks": [
       {
-        "miner": "731002",
-        "minerName": "Counterproof Sanctions Screener",
+        "miner": "64175",
+        "minerName": "OathCast Sanctions Screen",
         "kind": "name",
         "subject": "Islamic Revolutionary Guard Corps",
         "verdict": "match",
         "status": 200,
-        "answeredBy": "731002",
+        "answeredBy": "64175",
         "echoed": "Islamic Revolutionary Guard Corps",
         "result": {
           "name": "Islamic Revolutionary Guard Corps",
           "matched": true,
           "matches": [
             "ISLAMIC REVOLUTIONARY GUARD CORPS",
-            "Islamic Revolutionary Guard Corps (IRGC)",
-            "Imam Reza Islamic Revolutionary Guard Corps"
+            "Iranian Revolutionary Guard Corps",
+            "ISLAMIC REVOLUTIONARY GUARD CORPS AIR FORCE",
+            "Imam Reza Corps",
+            "Revolutionary Guard Corps"
           ],
-          "lists": null,
+          "lists": [
+            "OFAC SDN",
+            "OFAC Consolidated (non-SDN)",
+            "UN Security Council Consolidated",
+            "EU Consolidated Financial Sanctions"
+          ],
           "match_score": 1
         },
         "fieldStatus": {
           "name": "ok",
           "matched": "ok",
           "matches": "ok",
-          "lists": "missing",
+          "lists": "ok",
           "match_score": "ok"
         },
         "receipt": {
-          "receipt_hash": "0x317fdc0b2721e129385564a47fb42ba7527d907026637f43ee23fd4a27998f23",
-          "rail": "x402",
-          "payer": "0x4C8E60D549fa427Da628882d76d4df8287e03E59",
-          "miner": "5138",
+          "receipt_hash": "0xf9373830285087a39ce6239cd1815e70e2cae95ec1e8597b65e9cabaee892f5a",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
+          "miner": "5287",
           "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
           "amount_uusdc": "10000",
-          "epoch_id": 0,
-          "settlement": "onchain",
-          "chain": "eip155:84532",
-          "tx_hash": "0xbeb50e2fa5f279accccbbb908a0d4aff36eaecafe11ad5e753d2f7ffb160275b",
-          "timestamp": 1794576946
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998552
         },
-        "ms": 6908
+        "ms": 11161
       },
       {
         "miner": "710637",
@@ -859,19 +947,18 @@
           "match_score": "ok"
         },
         "receipt": {
-          "receipt_hash": "0x50a611392e2024ffbcfdfdde1d4ba02ec9330acfc8a35b5538983bbad95b4f39",
-          "rail": "x402",
-          "payer": "0x4C8E60D549fa427Da628882d76d4df8287e03E59",
+          "receipt_hash": "0xd7246cd8c9adc481aeacaac74385dcdc23fd48cb25c2a930b021d9a53409bf21",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
           "miner": "4860",
           "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
           "amount_uusdc": "10000",
-          "epoch_id": 0,
-          "settlement": "onchain",
-          "chain": "eip155:84532",
-          "tx_hash": "0x8d3243ef3482602f2e202aaf158f49a49e93d9c1a96661bd201ded1f576540c3",
-          "timestamp": 1794576948
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998552
         },
-        "ms": 9621
+        "ms": 11662
       }
     ]
   },
@@ -881,42 +968,46 @@
     "decision": "screened",
     "checks": [
       {
-        "miner": "731002",
-        "minerName": "Counterproof Sanctions Screener",
+        "miner": "64175",
+        "minerName": "OathCast Sanctions Screen",
         "kind": "name",
         "subject": "Adaeze Okonkwo Farms",
         "verdict": "clean",
         "status": 200,
-        "answeredBy": "731002",
+        "answeredBy": "64175",
         "echoed": "Adaeze Okonkwo Farms",
         "result": {
           "name": "Adaeze Okonkwo Farms",
           "matched": false,
           "matches": null,
-          "lists": null,
-          "match_score": 0
+          "lists": [
+            "OFAC SDN",
+            "OFAC Consolidated (non-SDN)",
+            "UN Security Council Consolidated",
+            "EU Consolidated Financial Sanctions"
+          ],
+          "match_score": 0.521739
         },
         "fieldStatus": {
           "name": "ok",
           "matched": "ok",
           "matches": "missing",
-          "lists": "missing",
+          "lists": "ok",
           "match_score": "ok"
         },
         "receipt": {
-          "receipt_hash": "0xd82e7c84055789de0180fbe42e8cdb782e6f07c99a7d9980b406158e6e983f20",
-          "rail": "x402",
-          "payer": "0x4C8E60D549fa427Da628882d76d4df8287e03E59",
-          "miner": "5138",
+          "receipt_hash": "0x465f54341a39628c60ac0cdc4bb471ca9322daf5b28ec9ff06032b644d15a5a4",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
+          "miner": "5287",
           "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
           "amount_uusdc": "10000",
-          "epoch_id": 0,
-          "settlement": "onchain",
-          "chain": "eip155:84532",
-          "tx_hash": "0x0896b72d234975a0e2c4126c38740c1c8ab0650d2b623cf8ddb58af85ae41f80",
-          "timestamp": 1794576958
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998576
         },
-        "ms": 5089
+        "ms": 6342
       },
       {
         "miner": "710637",
@@ -956,19 +1047,18 @@
           "match_score": "ok"
         },
         "receipt": {
-          "receipt_hash": "0xb44bcfd1751686b31a015ed27a93e58353ac9c4006a102b61cc69d91996057b4",
-          "rail": "x402",
-          "payer": "0x4C8E60D549fa427Da628882d76d4df8287e03E59",
+          "receipt_hash": "0x46927e2142a8f22ec28433b457509ef36e2bdc5a1e055ebe6f6702a8fb81e900",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
           "miner": "4860",
           "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
           "amount_uusdc": "10000",
-          "epoch_id": 0,
-          "settlement": "onchain",
-          "chain": "eip155:84532",
-          "tx_hash": "0xa3a76f240724a03b061b1705143b57fcf7b1b10759b6faf734d51158c2ddc007",
-          "timestamp": 1794576963
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998581
         },
-        "ms": 9899
+        "ms": 11003
       }
     ]
   },
@@ -978,42 +1068,46 @@
     "decision": "screened",
     "checks": [
       {
-        "miner": "731002",
-        "minerName": "Counterproof Sanctions Screener",
+        "miner": "64175",
+        "minerName": "OathCast Sanctions Screen",
         "kind": "name",
         "subject": "Northwind Design Collective",
         "verdict": "clean",
         "status": 200,
-        "answeredBy": "731002",
+        "answeredBy": "64175",
         "echoed": "Northwind Design Collective",
         "result": {
           "name": "Northwind Design Collective",
           "matched": false,
           "matches": null,
-          "lists": null,
-          "match_score": 0
+          "lists": [
+            "OFAC SDN",
+            "OFAC Consolidated (non-SDN)",
+            "UN Security Council Consolidated",
+            "EU Consolidated Financial Sanctions"
+          ],
+          "match_score": 0.583333
         },
         "fieldStatus": {
           "name": "ok",
           "matched": "ok",
           "matches": "missing",
-          "lists": "missing",
+          "lists": "ok",
           "match_score": "ok"
         },
         "receipt": {
-          "receipt_hash": "0x20188c4f28110abfc558f42b754af107ab799add461517b5cebc87650713e3b9",
-          "rail": "x402",
-          "payer": "0x4C8E60D549fa427Da628882d76d4df8287e03E59",
-          "miner": "5138",
+          "receipt_hash": "0xb1af80ce376aaf2901ce0f6cfffb128f30f59ee14f637e12072c01f0676eec17",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
+          "miner": "5287",
           "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
           "amount_uusdc": "10000",
-          "epoch_id": 0,
-          "settlement": "onchain",
-          "chain": "eip155:84532",
-          "tx_hash": "0xeb6ce5062ae8dc78e7a7e4c8b489605dc55fc4326b5911e20d57bc2b0dbb6d34",
-          "timestamp": 1794576957
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998576
         },
-        "ms": 4063
+        "ms": 6878
       },
       {
         "miner": "710637",
@@ -1053,19 +1147,18 @@
           "match_score": "ok"
         },
         "receipt": {
-          "receipt_hash": "0x7e3e19864dd7347abf95232ea4ae19f4cfb668d5d8bea3cbd703c7e846c85f4d",
-          "rail": "x402",
-          "payer": "0x4C8E60D549fa427Da628882d76d4df8287e03E59",
+          "receipt_hash": "0x0b7439c143e2649d1f4e6fed24aca1c2b9c994f0b7a45031d2cb4ccdc8f86f1e",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
           "miner": "4860",
           "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
           "amount_uusdc": "10000",
-          "epoch_id": 0,
-          "settlement": "onchain",
-          "chain": "eip155:84532",
-          "tx_hash": "0x519f0140432d0d4d4272ad3f7d29369f477213cc26a4a439bbf8080b726800ef",
-          "timestamp": 1794576962
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998580
         },
-        "ms": 9057
+        "ms": 10156
       }
     ]
   },
@@ -1075,42 +1168,46 @@
     "decision": "screened",
     "checks": [
       {
-        "miner": "731002",
-        "minerName": "Counterproof Sanctions Screener",
+        "miner": "64175",
+        "minerName": "OathCast Sanctions Screen",
         "kind": "name",
         "subject": "Kestrel Pixel Labs",
         "verdict": "clean",
         "status": 200,
-        "answeredBy": "731002",
+        "answeredBy": "64175",
         "echoed": "Kestrel Pixel Labs",
         "result": {
           "name": "Kestrel Pixel Labs",
           "matched": false,
           "matches": null,
-          "lists": null,
-          "match_score": 0
+          "lists": [
+            "OFAC SDN",
+            "OFAC Consolidated (non-SDN)",
+            "UN Security Council Consolidated",
+            "EU Consolidated Financial Sanctions"
+          ],
+          "match_score": 0.580645
         },
         "fieldStatus": {
           "name": "ok",
           "matched": "ok",
           "matches": "missing",
-          "lists": "missing",
+          "lists": "ok",
           "match_score": "ok"
         },
         "receipt": {
-          "receipt_hash": "0x2c5defe3692e620a09941aada5419363dc24ab0b9272d3d3aa945913530555aa",
-          "rail": "x402",
-          "payer": "0x4C8E60D549fa427Da628882d76d4df8287e03E59",
-          "miner": "5138",
+          "receipt_hash": "0xa7ef39c5236a05511aae87fdf4c2e6eeb6f6a4ce257dc2422cadb7dfe9f4122a",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
+          "miner": "5287",
           "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
           "amount_uusdc": "10000",
-          "epoch_id": 0,
-          "settlement": "onchain",
-          "chain": "eip155:84532",
-          "tx_hash": "0x411f3a3eef323d415c4e22573151a0d821dba32074b97f0bbe6492942d3d1c91",
-          "timestamp": 1794576958
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998577
         },
-        "ms": 5087
+        "ms": 7196
       },
       {
         "miner": "710637",
@@ -1150,19 +1247,18 @@
           "match_score": "ok"
         },
         "receipt": {
-          "receipt_hash": "0x2eee61188fa08db5548499893c0d46600e0a75f69a3b37ef72bf40d5ed6f1ab7",
-          "rail": "x402",
-          "payer": "0x4C8E60D549fa427Da628882d76d4df8287e03E59",
+          "receipt_hash": "0x8026e9bc73230f99d09d9d278fbd7ce9b663624c1a624dc7e44884b1031a0655",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
           "miner": "4860",
           "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
           "amount_uusdc": "10000",
-          "epoch_id": 0,
-          "settlement": "onchain",
-          "chain": "eip155:84532",
-          "tx_hash": "0x5a268f2668f6ddf85b32e647752241a772ec94fee31e3761acdc18da29393873",
-          "timestamp": 1794576961
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998579
         },
-        "ms": 8268
+        "ms": 9512
       }
     ]
   },
@@ -1172,42 +1268,46 @@
     "decision": "screened",
     "checks": [
       {
-        "miner": "731002",
-        "minerName": "Counterproof Sanctions Screener",
+        "miner": "64175",
+        "minerName": "OathCast Sanctions Screen",
         "kind": "name",
         "subject": "Blue Heron Translations",
         "verdict": "clean",
         "status": 200,
-        "answeredBy": "731002",
+        "answeredBy": "64175",
         "echoed": "Blue Heron Translations",
         "result": {
           "name": "Blue Heron Translations",
           "matched": false,
           "matches": null,
-          "lists": null,
-          "match_score": 0
+          "lists": [
+            "OFAC SDN",
+            "OFAC Consolidated (non-SDN)",
+            "UN Security Council Consolidated",
+            "EU Consolidated Financial Sanctions"
+          ],
+          "match_score": 0.604651
         },
         "fieldStatus": {
           "name": "ok",
           "matched": "ok",
           "matches": "missing",
-          "lists": "missing",
+          "lists": "ok",
           "match_score": "ok"
         },
         "receipt": {
-          "receipt_hash": "0xba8d665415f319e56dbb01b9440506f9d49e04f4b5b6112fb163cca63f383693",
-          "rail": "x402",
-          "payer": "0x4C8E60D549fa427Da628882d76d4df8287e03E59",
-          "miner": "5138",
+          "receipt_hash": "0x52a1edcb382f1c16a5c7246746c46ba3f8ca25806d3df6a6201ea129c58fb824",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
+          "miner": "5287",
           "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
           "amount_uusdc": "10000",
-          "epoch_id": 0,
-          "settlement": "onchain",
-          "chain": "eip155:84532",
-          "tx_hash": "0xaad1339fcac0c17e3c2d550abc0fbecb10413eedfd681cab4d8860e0cc5272de",
-          "timestamp": 1794576957
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998578
         },
-        "ms": 4512
+        "ms": 8035
       },
       {
         "miner": "710637",
@@ -1247,19 +1347,18 @@
           "match_score": "ok"
         },
         "receipt": {
-          "receipt_hash": "0x968005ce6e6ff4d2b0d3b5cc3a85810ae96c4374f46ea73e4a5bd3e078ae73e0",
-          "rail": "x402",
-          "payer": "0x4C8E60D549fa427Da628882d76d4df8287e03E59",
+          "receipt_hash": "0x54eccabb983913fa5e1328792d5888bb01ecf94cf27e6b2a672e8c7a203f38a4",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
           "miner": "4860",
           "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
           "amount_uusdc": "10000",
-          "epoch_id": 0,
-          "settlement": "onchain",
-          "chain": "eip155:84532",
-          "tx_hash": "0xdbdf6971eaf60829cd2e6566ff909b9c665e16eed8d207829deba0a8439f88ba",
-          "timestamp": 1794576962
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998579
         },
-        "ms": 8903
+        "ms": 9578
       }
     ]
   },
@@ -1269,42 +1368,46 @@
     "decision": "screened",
     "checks": [
       {
-        "miner": "731002",
-        "minerName": "Counterproof Sanctions Screener",
+        "miner": "64175",
+        "minerName": "OathCast Sanctions Screen",
         "kind": "name",
         "subject": "Tunde Bakare Studio",
         "verdict": "clean",
         "status": 200,
-        "answeredBy": "731002",
+        "answeredBy": "64175",
         "echoed": "Tunde Bakare Studio",
         "result": {
           "name": "Tunde Bakare Studio",
           "matched": false,
           "matches": null,
-          "lists": null,
-          "match_score": 0
+          "lists": [
+            "OFAC SDN",
+            "OFAC Consolidated (non-SDN)",
+            "UN Security Council Consolidated",
+            "EU Consolidated Financial Sanctions"
+          ],
+          "match_score": 0.6
         },
         "fieldStatus": {
           "name": "ok",
           "matched": "ok",
           "matches": "missing",
-          "lists": "missing",
+          "lists": "ok",
           "match_score": "ok"
         },
         "receipt": {
-          "receipt_hash": "0xbfbef84f21afd4b41e46a8a3bf6984147b2545597a934d72337df3e45614aff4",
-          "rail": "x402",
-          "payer": "0x4C8E60D549fa427Da628882d76d4df8287e03E59",
-          "miner": "5138",
+          "receipt_hash": "0xa434b2f71ddae2002ff9a8a34d37066b58c9722d7ec2a51fc10978e5dff974a2",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
+          "miner": "5287",
           "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
           "amount_uusdc": "10000",
-          "epoch_id": 0,
-          "settlement": "onchain",
-          "chain": "eip155:84532",
-          "tx_hash": "0x4676f0812c06563161703ef392a351a2c98b1aeea3199321b27793e6a43a3fc8",
-          "timestamp": 1794576958
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998576
         },
-        "ms": 5202
+        "ms": 6339
       },
       {
         "miner": "710637",
@@ -1344,19 +1447,18 @@
           "match_score": "ok"
         },
         "receipt": {
-          "receipt_hash": "0x7ec57c861aaddc767e7b2922794054416038aec721705b9cd8745917b27672e9",
-          "rail": "x402",
-          "payer": "0x4C8E60D549fa427Da628882d76d4df8287e03E59",
+          "receipt_hash": "0x9f83504f6b64b0acc19f0f58cc80ca60f7dd905fd575d929f1ce28ae47e96f6b",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
           "miner": "4860",
           "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
           "amount_uusdc": "10000",
-          "epoch_id": 0,
-          "settlement": "onchain",
-          "chain": "eip155:84532",
-          "tx_hash": "0xc62163f795e9319d1c3e6ba73445b51a9f605aaa712903bddce62973615bb535",
-          "timestamp": 1794576962
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998580
         },
-        "ms": 9474
+        "ms": 10052
       }
     ]
   },
@@ -1366,42 +1468,46 @@
     "decision": "screened",
     "checks": [
       {
-        "miner": "731002",
-        "minerName": "Counterproof Sanctions Screener",
+        "miner": "64175",
+        "minerName": "OathCast Sanctions Screen",
         "kind": "name",
         "subject": "Priya Raman Illustration",
         "verdict": "clean",
         "status": 200,
-        "answeredBy": "731002",
+        "answeredBy": "64175",
         "echoed": "Priya Raman Illustration",
         "result": {
           "name": "Priya Raman Illustration",
           "matched": false,
           "matches": null,
-          "lists": null,
-          "match_score": 0
+          "lists": [
+            "OFAC SDN",
+            "OFAC Consolidated (non-SDN)",
+            "UN Security Council Consolidated",
+            "EU Consolidated Financial Sanctions"
+          ],
+          "match_score": 0.48
         },
         "fieldStatus": {
           "name": "ok",
           "matched": "ok",
           "matches": "missing",
-          "lists": "missing",
+          "lists": "ok",
           "match_score": "ok"
         },
         "receipt": {
-          "receipt_hash": "0x1e7fc9c4d52d92839d7bd8b1563541f5dfb63c2c906c86d36bcefec32f274fff",
-          "rail": "x402",
-          "payer": "0x4C8E60D549fa427Da628882d76d4df8287e03E59",
-          "miner": "5138",
+          "receipt_hash": "0x024c12cbdbdeefcb068fefde02388d7de79d185d00fcec14a11eee9224d1b3a0",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
+          "miner": "5287",
           "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
           "amount_uusdc": "10000",
-          "epoch_id": 0,
-          "settlement": "onchain",
-          "chain": "eip155:84532",
-          "tx_hash": "0x575d942b5699a81f9991466123da2dab547f2eef16aa3b7d9f8971a13734c1b8",
-          "timestamp": 1794576967
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998588
         },
-        "ms": 4668
+        "ms": 7050
       },
       {
         "miner": "710637",
@@ -1441,19 +1547,18 @@
           "match_score": "ok"
         },
         "receipt": {
-          "receipt_hash": "0x0acbdcce02151f12b4bde62b566f7278225d70be53b59be2626147e7a409d8f3",
-          "rail": "x402",
-          "payer": "0x4C8E60D549fa427Da628882d76d4df8287e03E59",
+          "receipt_hash": "0xf91cce07eea1c8693d71db75a965d745e7297ed5d060072c1cdb92b5dfb9d97a",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
           "miner": "4860",
           "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
           "amount_uusdc": "10000",
-          "epoch_id": 0,
-          "settlement": "onchain",
-          "chain": "eip155:84532",
-          "tx_hash": "0x0186e1b351ab6f1fb3225f84e058be203ea472a078900c3a53762bbd08f87f7a",
-          "timestamp": 1794576971
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998592
         },
-        "ms": 7955
+        "ms": 11423
       }
     ]
   },
@@ -1463,42 +1568,46 @@
     "decision": "screened",
     "checks": [
       {
-        "miner": "731002",
-        "minerName": "Counterproof Sanctions Screener",
+        "miner": "64175",
+        "minerName": "OathCast Sanctions Screen",
         "kind": "name",
         "subject": "Quillfeather Copywriting",
         "verdict": "clean",
         "status": 200,
-        "answeredBy": "731002",
+        "answeredBy": "64175",
         "echoed": "Quillfeather Copywriting",
         "result": {
           "name": "Quillfeather Copywriting",
           "matched": false,
           "matches": null,
-          "lists": null,
+          "lists": [
+            "OFAC SDN",
+            "OFAC Consolidated (non-SDN)",
+            "UN Security Council Consolidated",
+            "EU Consolidated Financial Sanctions"
+          ],
           "match_score": 0
         },
         "fieldStatus": {
           "name": "ok",
           "matched": "ok",
           "matches": "missing",
-          "lists": "missing",
+          "lists": "ok",
           "match_score": "ok"
         },
         "receipt": {
-          "receipt_hash": "0x24fbfc7fb1c696b48ce37059f044cf03f067fd55d4b3b6cb88a1805ef6da8bb7",
-          "rail": "x402",
-          "payer": "0x4C8E60D549fa427Da628882d76d4df8287e03E59",
-          "miner": "5138",
+          "receipt_hash": "0xbc27c43427bbe7a3628341fbd7a3ea7b06b5de1130b91555944336900b0e8daf",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
+          "miner": "5287",
           "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
           "amount_uusdc": "10000",
-          "epoch_id": 0,
-          "settlement": "onchain",
-          "chain": "eip155:84532",
-          "tx_hash": "0x90b2ae8b73b7b11979b7eedba669700b4dc2ca4559af7758b631a8bff467eb65",
-          "timestamp": 1794576967
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998588
         },
-        "ms": 3854
+        "ms": 7062
       },
       {
         "miner": "710637",
@@ -1538,19 +1647,18 @@
           "match_score": "ok"
         },
         "receipt": {
-          "receipt_hash": "0x22b45b1f488a916e40025d202594db7cc439f67e8741c932e5b2fe5b6c32dc89",
-          "rail": "x402",
-          "payer": "0x4C8E60D549fa427Da628882d76d4df8287e03E59",
+          "receipt_hash": "0xcb7f67471194db1cd10b89df9861e92180b587543103d333059c8b8f58803dec",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
           "miner": "4860",
           "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
           "amount_uusdc": "10000",
-          "epoch_id": 0,
-          "settlement": "onchain",
-          "chain": "eip155:84532",
-          "tx_hash": "0xf68cf2d3a6884165a3b7a4813aee4f26c8dd2c79710fedfd3142242b53548781",
-          "timestamp": 1794576972
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998593
         },
-        "ms": 9111
+        "ms": 11956
       }
     ]
   },
@@ -1560,42 +1668,46 @@
     "decision": "screened",
     "checks": [
       {
-        "miner": "731002",
-        "minerName": "Counterproof Sanctions Screener",
+        "miner": "64175",
+        "minerName": "OathCast Sanctions Screen",
         "kind": "name",
         "subject": "Ostrava Motion Graphics",
         "verdict": "clean",
         "status": 200,
-        "answeredBy": "731002",
+        "answeredBy": "64175",
         "echoed": "Ostrava Motion Graphics",
         "result": {
           "name": "Ostrava Motion Graphics",
           "matched": false,
           "matches": null,
-          "lists": null,
+          "lists": [
+            "OFAC SDN",
+            "OFAC Consolidated (non-SDN)",
+            "UN Security Council Consolidated",
+            "EU Consolidated Financial Sanctions"
+          ],
           "match_score": 0
         },
         "fieldStatus": {
           "name": "ok",
           "matched": "ok",
           "matches": "missing",
-          "lists": "missing",
+          "lists": "ok",
           "match_score": "ok"
         },
         "receipt": {
-          "receipt_hash": "0xe1d4a5c14379a163701afee9bcff9d299ec3f144ff3001eb4d81d92ecbec981b",
-          "rail": "x402",
-          "payer": "0x4C8E60D549fa427Da628882d76d4df8287e03E59",
-          "miner": "5138",
+          "receipt_hash": "0xea2a8dff54b11c8c262a35e04769b248f55776e9c6c97b8aee5c9e437b60e91c",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
+          "miner": "5287",
           "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
           "amount_uusdc": "10000",
-          "epoch_id": 0,
-          "settlement": "onchain",
-          "chain": "eip155:84532",
-          "tx_hash": "0x1639f32285d1c3b870626acb9ce9f825e2a72d0f732e9447117d8baafcbc324a",
-          "timestamp": 1794576967
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998587
         },
-        "ms": 4033
+        "ms": 6494
       },
       {
         "miner": "710637",
@@ -1635,19 +1747,18 @@
           "match_score": "ok"
         },
         "receipt": {
-          "receipt_hash": "0x2842a2eec17d99c5b77df35490561caae624b7084b154d225117cf148afdabd1",
-          "rail": "x402",
-          "payer": "0x4C8E60D549fa427Da628882d76d4df8287e03E59",
+          "receipt_hash": "0xc1caf07eb1a5e55f7f015dbecaa401e46806e40719f95b56ad04f8226532fb26",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
           "miner": "4860",
           "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
           "amount_uusdc": "10000",
-          "epoch_id": 0,
-          "settlement": "onchain",
-          "chain": "eip155:84532",
-          "tx_hash": "0x6ead502cd06b86b681df60273aa2e24d2f61dcc059fae52d7e42a399730a2410",
-          "timestamp": 1794576972
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998593
         },
-        "ms": 9365
+        "ms": 12107
       }
     ]
   },
@@ -1657,42 +1768,46 @@
     "decision": "screened",
     "checks": [
       {
-        "miner": "731002",
-        "minerName": "Counterproof Sanctions Screener",
+        "miner": "64175",
+        "minerName": "OathCast Sanctions Screen",
         "kind": "name",
         "subject": "Lumen Harbor Analytics",
         "verdict": "clean",
         "status": 200,
-        "answeredBy": "731002",
+        "answeredBy": "64175",
         "echoed": "Lumen Harbor Analytics",
         "result": {
           "name": "Lumen Harbor Analytics",
           "matched": false,
           "matches": null,
-          "lists": null,
-          "match_score": 0
+          "lists": [
+            "OFAC SDN",
+            "OFAC Consolidated (non-SDN)",
+            "UN Security Council Consolidated",
+            "EU Consolidated Financial Sanctions"
+          ],
+          "match_score": 0.232558
         },
         "fieldStatus": {
           "name": "ok",
           "matched": "ok",
           "matches": "missing",
-          "lists": "missing",
+          "lists": "ok",
           "match_score": "ok"
         },
         "receipt": {
-          "receipt_hash": "0x337104a90733bde488eace59dfe0dac38aff07116b46ef101a34c51dd1eb62f2",
-          "rail": "x402",
-          "payer": "0x4C8E60D549fa427Da628882d76d4df8287e03E59",
-          "miner": "5138",
+          "receipt_hash": "0xe8898387bae140f55859cdce53dcafc8fab24a2292be57e11b54b70d26c25cc3",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
+          "miner": "5287",
           "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
           "amount_uusdc": "10000",
-          "epoch_id": 0,
-          "settlement": "onchain",
-          "chain": "eip155:84532",
-          "tx_hash": "0xbad80a57da3f6a69a1bcac721df11fd8efa853e40b4c76cf74513ccc9aa1ebf3",
-          "timestamp": 1794576967
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998589
         },
-        "ms": 4124
+        "ms": 8071
       },
       {
         "miner": "710637",
@@ -1732,19 +1847,18 @@
           "match_score": "ok"
         },
         "receipt": {
-          "receipt_hash": "0xd852b90c51c0cbdc7f14dd4d45d63ca26d71b6499276dab9e0dddc0c8838b737",
-          "rail": "x402",
-          "payer": "0x4C8E60D549fa427Da628882d76d4df8287e03E59",
+          "receipt_hash": "0xe8e22494307d94c3f494384553a692f450871ca801ae6c4b2b1d3585871dffee",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
           "miner": "4860",
           "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
           "amount_uusdc": "10000",
-          "epoch_id": 0,
-          "settlement": "onchain",
-          "chain": "eip155:84532",
-          "tx_hash": "0xc3d14f7f15e875faf0146e2ee4755bb1c189aa92774f4e61b6d5d64cb6c7a9c5",
-          "timestamp": 1794576971
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998592
         },
-        "ms": 8612
+        "ms": 10962
       }
     ]
   },
@@ -1754,42 +1868,46 @@
     "decision": "screened",
     "checks": [
       {
-        "miner": "731002",
-        "minerName": "Counterproof Sanctions Screener",
+        "miner": "64175",
+        "minerName": "OathCast Sanctions Screen",
         "kind": "name",
         "subject": "Zainab Yusuf Photography",
         "verdict": "clean",
         "status": 200,
-        "answeredBy": "731002",
+        "answeredBy": "64175",
         "echoed": "Zainab Yusuf Photography",
         "result": {
           "name": "Zainab Yusuf Photography",
           "matched": false,
           "matches": null,
-          "lists": null,
-          "match_score": 0
+          "lists": [
+            "OFAC SDN",
+            "OFAC Consolidated (non-SDN)",
+            "UN Security Council Consolidated",
+            "EU Consolidated Financial Sanctions"
+          ],
+          "match_score": 0.5
         },
         "fieldStatus": {
           "name": "ok",
           "matched": "ok",
           "matches": "missing",
-          "lists": "missing",
+          "lists": "ok",
           "match_score": "ok"
         },
         "receipt": {
-          "receipt_hash": "0x0fb6b851c0e667b858f33ded6d1149f47f4f22faef933b45e30c166c0e8583d5",
-          "rail": "x402",
-          "payer": "0x4C8E60D549fa427Da628882d76d4df8287e03E59",
-          "miner": "5138",
+          "receipt_hash": "0xe5a591d1df85cbad4ff99ea79bcbe59c0f058ec672af354b7b9f936367f9a2d9",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
+          "miner": "5287",
           "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
           "amount_uusdc": "10000",
-          "epoch_id": 0,
-          "settlement": "onchain",
-          "chain": "eip155:84532",
-          "tx_hash": "0x83e7fe0e0f531106af4857c62221dd0468891e30828f52dcb8d1251275f0b102",
-          "timestamp": 1794576967
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998587
         },
-        "ms": 4501
+        "ms": 6344
       },
       {
         "miner": "710637",
@@ -1829,19 +1947,18 @@
           "match_score": "ok"
         },
         "receipt": {
-          "receipt_hash": "0x0f2b645f5200c0907096b44d711b64772e18da127bfbb226997594b40f3c15bb",
-          "rail": "x402",
-          "payer": "0x4C8E60D549fa427Da628882d76d4df8287e03E59",
+          "receipt_hash": "0xf10cfe8bc0c81029dafa3355484bebadbeaf78d8bedbf9554c4707635b50aea3",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
           "miner": "4860",
           "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
           "amount_uusdc": "10000",
-          "epoch_id": 0,
-          "settlement": "onchain",
-          "chain": "eip155:84532",
-          "tx_hash": "0x23e21fd06e418cb5e3a1a186595f879d7ed092e59eea10ccf41f241fe9d1013d",
-          "timestamp": 1794576971
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998592
         },
-        "ms": 8510
+        "ms": 11717
       }
     ]
   },
@@ -1851,42 +1968,52 @@
     "decision": "held_match",
     "checks": [
       {
-        "miner": "731002",
-        "minerName": "Counterproof Sanctions Screener",
+        "miner": "64175",
+        "minerName": "OathCast Sanctions Screen",
         "kind": "name",
         "subject": "Mohammed Ali",
         "verdict": "match",
         "status": 200,
-        "answeredBy": "731002",
+        "answeredBy": "64175",
         "echoed": "Mohammed Ali",
         "result": {
           "name": "Mohammed Ali",
           "matched": true,
-          "matches": null,
-          "lists": null,
+          "matches": [
+            "“1-P”",
+            "ALI KONY",
+            "ALI, Ahmed Mohammed Hamed",
+            "AL-KANI, Mohamed",
+            "MOHAMMED, Fazul Abdullah"
+          ],
+          "lists": [
+            "OFAC SDN",
+            "OFAC Consolidated (non-SDN)",
+            "UN Security Council Consolidated",
+            "EU Consolidated Financial Sanctions"
+          ],
           "match_score": 1
         },
         "fieldStatus": {
           "name": "ok",
           "matched": "ok",
-          "matches": "rejected",
-          "lists": "missing",
+          "matches": "ok",
+          "lists": "ok",
           "match_score": "ok"
         },
         "receipt": {
-          "receipt_hash": "0x0a7f7041889dbdf9f71d20746da4277c8f1b8f6825aa217a0994867fc00dcad9",
-          "rail": "x402",
-          "payer": "0x4C8E60D549fa427Da628882d76d4df8287e03E59",
-          "miner": "5138",
+          "receipt_hash": "0x35f29c36de1da81753184bdad114971e1e24700a8610edf661f91698584d8100",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
+          "miner": "5287",
           "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
           "amount_uusdc": "10000",
-          "epoch_id": 0,
-          "settlement": "onchain",
-          "chain": "eip155:84532",
-          "tx_hash": "0xc9aebad42b75e1a6e0a4453f715de2a6fa26ea9978f08b504655a73f6863d148",
-          "timestamp": 1794576980
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998600
         },
-        "ms": 7657
+        "ms": 7597
       },
       {
         "miner": "710637",
@@ -1898,78 +2025,95 @@
         "answeredBy": "710637",
         "echoed": "Mohammed Ali",
         "result": {
-          "name": null,
-          "matched": null,
+          "name": "Mohammed Ali",
+          "matched": true,
           "matches": null,
-          "lists": null,
+          "lists": [
+            "OFAC SDN",
+            "OFAC Consolidated (non-SDN)",
+            "UK Sanctions List (entities only)",
+            "Canada autonomous sanctions (entities only)",
+            "EU Financial Sanctions (entities only)",
+            "US BIS Entity List (export controls)",
+            "US BIS Military End User List (export controls)",
+            "US BIS Denied Persons List (dated standard export-denial orders)",
+            "UK Sanctions List (ships)",
+            "US BIS Entity List (additional primary-row corroborated records)",
+            "Canada autonomous sanctions (November 5 additional entities)",
+            "Canada autonomous sanctions (corroborated ships)",
+            "Canada autonomous sanctions (November 5 Iranian entity amendment)"
+          ],
           "match_score": 1
         },
         "fieldStatus": {
-          "name": "unavailable",
-          "matched": "unavailable",
-          "matches": "unavailable",
-          "lists": "unavailable",
+          "name": "ok",
+          "matched": "ok",
+          "matches": "rejected",
+          "lists": "ok",
           "match_score": "ok"
         },
         "receipt": {
-          "receipt_hash": "0xb2a07a448fc1ef41af49fcb48890b653797f2c5a095e8469a2399db2da1af731",
-          "rail": "x402",
-          "payer": "0x4C8E60D549fa427Da628882d76d4df8287e03E59",
+          "receipt_hash": "0xab3ac2978e4b522580864f26d8c925b494681d723c2a6359736293960bc63387",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
           "miner": "4860",
           "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
           "amount_uusdc": "10000",
-          "epoch_id": 0,
-          "settlement": "onchain",
-          "chain": "eip155:84532",
-          "tx_hash": "0xc9aca82424fa435382ad4dae27e593a718ada39389fe54c139813697bc038b23",
-          "timestamp": 1794576986
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998619
         },
-        "ms": 13668
+        "ms": 25824
       }
     ]
   },
   {
     "name": "Juan Carlos Rodriguez",
     "expect": null,
-    "decision": "screened",
+    "decision": "held_match",
     "checks": [
       {
-        "miner": "731002",
-        "minerName": "Counterproof Sanctions Screener",
+        "miner": "64175",
+        "minerName": "OathCast Sanctions Screen",
         "kind": "name",
         "subject": "Juan Carlos Rodriguez",
-        "verdict": "clean",
+        "verdict": "match",
         "status": 200,
-        "answeredBy": "731002",
+        "answeredBy": "64175",
         "echoed": "Juan Carlos Rodriguez",
         "result": {
           "name": "Juan Carlos Rodriguez",
           "matched": false,
           "matches": null,
-          "lists": null,
-          "match_score": 0
+          "lists": [
+            "OFAC SDN",
+            "OFAC Consolidated (non-SDN)",
+            "UN Security Council Consolidated",
+            "EU Consolidated Financial Sanctions"
+          ],
+          "match_score": 0.8
         },
         "fieldStatus": {
           "name": "ok",
           "matched": "ok",
           "matches": "missing",
-          "lists": "missing",
+          "lists": "ok",
           "match_score": "ok"
         },
         "receipt": {
-          "receipt_hash": "0x77ed812da34d8c5560ed0ed45e876fb6f30cd4858e2e13016b6e4bf8e386366e",
-          "rail": "x402",
-          "payer": "0x4C8E60D549fa427Da628882d76d4df8287e03E59",
-          "miner": "5138",
+          "receipt_hash": "0x72c2ae7f2aa4da4e7ca53a8a1e576d4bf352f438c69a273dd9b5dbdfd2da90bb",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
+          "miner": "5287",
           "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
           "amount_uusdc": "10000",
-          "epoch_id": 0,
-          "settlement": "onchain",
-          "chain": "eip155:84532",
-          "tx_hash": "0x99bf413d6a98d618ca4e2669859f88beb7778f59f47f7b245d50272e5a798d92",
-          "timestamp": 1794576976
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998600
         },
-        "ms": 4127
+        "ms": 6891
       },
       {
         "miner": "710637",
@@ -2009,19 +2153,18 @@
           "match_score": "ok"
         },
         "receipt": {
-          "receipt_hash": "0xcbbbba81a01db8c2e2dbef35a599f92254d4df609562bee24ca954bd9e05020c",
-          "rail": "x402",
-          "payer": "0x4C8E60D549fa427Da628882d76d4df8287e03E59",
+          "receipt_hash": "0x156dbd8dd85227ff3c0c6856a0c73b956840ad873a53559630ab2ba28da17c94",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
           "miner": "4860",
           "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
           "amount_uusdc": "10000",
-          "epoch_id": 0,
-          "settlement": "onchain",
-          "chain": "eip155:84532",
-          "tx_hash": "0x6bdf5861a274722f072375d4c1f4d70dbf6205e3183dccf0db12c50130bc39dc",
-          "timestamp": 1794576981
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998602
         },
-        "ms": 9005
+        "ms": 9643
       }
     ]
   },
@@ -2031,42 +2174,46 @@
     "decision": "held_match",
     "checks": [
       {
-        "miner": "731002",
-        "minerName": "Counterproof Sanctions Screener",
+        "miner": "64175",
+        "minerName": "OathCast Sanctions Screen",
         "kind": "name",
         "subject": "Li Wei",
         "verdict": "match",
         "status": 200,
-        "answeredBy": "731002",
+        "answeredBy": "64175",
         "echoed": "Li Wei",
         "result": {
           "name": "Li Wei",
-          "matched": true,
+          "matched": false,
           "matches": null,
-          "lists": null,
-          "match_score": 0.859
+          "lists": [
+            "OFAC SDN",
+            "OFAC Consolidated (non-SDN)",
+            "UN Security Council Consolidated",
+            "EU Consolidated Financial Sanctions"
+          ],
+          "match_score": 0.8
         },
         "fieldStatus": {
           "name": "ok",
           "matched": "ok",
-          "matches": "rejected",
-          "lists": "missing",
+          "matches": "missing",
+          "lists": "ok",
           "match_score": "ok"
         },
         "receipt": {
-          "receipt_hash": "0x6cf14d09492411dcd578dbb39a0689fbffe9a42dab4ab0600a7efc92454b6e6d",
-          "rail": "x402",
-          "payer": "0x4C8E60D549fa427Da628882d76d4df8287e03E59",
-          "miner": "5138",
+          "receipt_hash": "0xce7888313b9d733a76320ff0fb066f286f60e3a792677166e93c07817900ebb3",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
+          "miner": "5287",
           "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
           "amount_uusdc": "10000",
-          "epoch_id": 0,
-          "settlement": "onchain",
-          "chain": "eip155:84532",
-          "tx_hash": "0x795bc5787236ac3dcb1915254cc6c0ddacb7ecfc8d312a63170b2e4935cdee8f",
-          "timestamp": 1794576978
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998599
         },
-        "ms": 5373
+        "ms": 5807
       },
       {
         "miner": "710637",
@@ -2106,64 +2253,67 @@
           "match_score": "ok"
         },
         "receipt": {
-          "receipt_hash": "0xfb6d5a834667cfbdfc565582f47cafe5cfd9b0d6907c5cf4f373f12e2c5f01de",
-          "rail": "x402",
-          "payer": "0x4C8E60D549fa427Da628882d76d4df8287e03E59",
+          "receipt_hash": "0xf7353c35d18bac63c8d34f4ec79bea8f851dbd31840c94a5f38a9055cd7f6579",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
           "miner": "4860",
           "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
           "amount_uusdc": "10000",
-          "epoch_id": 0,
-          "settlement": "onchain",
-          "chain": "eip155:84532",
-          "tx_hash": "0xc38919a189cfae6ad54889711da6faff0ec3467b3ca479544ee4c5b4188e18e6",
-          "timestamp": 1794576980
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998603
         },
-        "ms": 8086
+        "ms": 10565
       }
     ]
   },
   {
     "name": "Ivan Petrov",
     "expect": null,
-    "decision": "screened",
+    "decision": "held_match",
     "checks": [
       {
-        "miner": "731002",
-        "minerName": "Counterproof Sanctions Screener",
+        "miner": "64175",
+        "minerName": "OathCast Sanctions Screen",
         "kind": "name",
         "subject": "Ivan Petrov",
-        "verdict": "clean",
+        "verdict": "match",
         "status": 200,
-        "answeredBy": "731002",
+        "answeredBy": "64175",
         "echoed": "Ivan Petrov",
         "result": {
           "name": "Ivan Petrov",
           "matched": false,
           "matches": null,
-          "lists": null,
-          "match_score": 0
+          "lists": [
+            "OFAC SDN",
+            "OFAC Consolidated (non-SDN)",
+            "UN Security Council Consolidated",
+            "EU Consolidated Financial Sanctions"
+          ],
+          "match_score": 0.75
         },
         "fieldStatus": {
           "name": "ok",
           "matched": "ok",
           "matches": "missing",
-          "lists": "missing",
+          "lists": "ok",
           "match_score": "ok"
         },
         "receipt": {
-          "receipt_hash": "0xbcc98b51f0bf95bd4ae2e5e4cc534fd03b8a7d7a738c18026b2779b94e858c0d",
-          "rail": "x402",
-          "payer": "0x4C8E60D549fa427Da628882d76d4df8287e03E59",
-          "miner": "5138",
+          "receipt_hash": "0xebd4a1ffad5284a39cf4db78849c9473f4e297d2a2e5253630b3283b0baa86c9",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
+          "miner": "5287",
           "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
           "amount_uusdc": "10000",
-          "epoch_id": 0,
-          "settlement": "onchain",
-          "chain": "eip155:84532",
-          "tx_hash": "0x439d67ab0c8bcbc376f657419de35a61ad2a98f7d960991f550bf81d9b2e5efc",
-          "timestamp": 1794576976
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998600
         },
-        "ms": 3753
+        "ms": 6981
       },
       {
         "miner": "710637",
@@ -2203,64 +2353,67 @@
           "match_score": "ok"
         },
         "receipt": {
-          "receipt_hash": "0x9f8b51d2794151026767d7e34ac4e9768a40bec649afef4a0de29dbe8f18a42c",
-          "rail": "x402",
-          "payer": "0x4C8E60D549fa427Da628882d76d4df8287e03E59",
+          "receipt_hash": "0x741419537da36570fb71cfc341d9589af6aa7abf3405857e37a14940b7ec10d1",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
           "miner": "4860",
           "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
           "amount_uusdc": "10000",
-          "epoch_id": 0,
-          "settlement": "onchain",
-          "chain": "eip155:84532",
-          "tx_hash": "0xb1f7cabf211f2469cf2a8a6d3f5f414fbbd81f90fb52d62b6e5a247856ef54e6",
-          "timestamp": 1794576980
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998603
         },
-        "ms": 7898
+        "ms": 9701
       }
     ]
   },
   {
     "name": "Maria Garcia",
     "expect": null,
-    "decision": "screened",
+    "decision": "held_match",
     "checks": [
       {
-        "miner": "731002",
-        "minerName": "Counterproof Sanctions Screener",
+        "miner": "64175",
+        "minerName": "OathCast Sanctions Screen",
         "kind": "name",
         "subject": "Maria Garcia",
-        "verdict": "clean",
+        "verdict": "match",
         "status": 200,
-        "answeredBy": "731002",
+        "answeredBy": "64175",
         "echoed": "Maria Garcia",
         "result": {
           "name": "Maria Garcia",
           "matched": false,
           "matches": null,
-          "lists": null,
-          "match_score": 0
+          "lists": [
+            "OFAC SDN",
+            "OFAC Consolidated (non-SDN)",
+            "UN Security Council Consolidated",
+            "EU Consolidated Financial Sanctions"
+          ],
+          "match_score": 0.782609
         },
         "fieldStatus": {
           "name": "ok",
           "matched": "ok",
           "matches": "missing",
-          "lists": "missing",
+          "lists": "ok",
           "match_score": "ok"
         },
         "receipt": {
-          "receipt_hash": "0xd7decfd6bfc1777f7b7bfcecd25ebc8cf03613d52c9c1566cf9feae16a971f18",
-          "rail": "x402",
-          "payer": "0x4C8E60D549fa427Da628882d76d4df8287e03E59",
-          "miner": "5138",
+          "receipt_hash": "0xff3f835ab5e0268e5a814a617550d8ba109100c69bfa23299ffbc7499fd27fd2",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
+          "miner": "5287",
           "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
           "amount_uusdc": "10000",
-          "epoch_id": 0,
-          "settlement": "onchain",
-          "chain": "eip155:84532",
-          "tx_hash": "0x8b86dde9281bdc0ff8385479c83c200aa4b7c715a1e422fdab3b394c62a06247",
-          "timestamp": 1794576977
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998599
         },
-        "ms": 4553
+        "ms": 5882
       },
       {
         "miner": "710637",
@@ -2300,19 +2453,222 @@
           "match_score": "ok"
         },
         "receipt": {
-          "receipt_hash": "0xc16076e02837b8ab817b0da074b6a0545639a652e36bb1e3cf41181e50093e16",
-          "rail": "x402",
-          "payer": "0x4C8E60D549fa427Da628882d76d4df8287e03E59",
+          "receipt_hash": "0x0604cb462e96e7cdc732e41df3bdb9d0126a4b357ba5cf23199fa1f319156c5e",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
           "miner": "4860",
           "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
           "amount_uusdc": "10000",
-          "epoch_id": 0,
-          "settlement": "onchain",
-          "chain": "eip155:84532",
-          "tx_hash": "0xc14328049e15f6f6ea308ca4dc7eb3c6b267c894e1e80418285b480e5636df6e",
-          "timestamp": 1794576981
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998604
         },
-        "ms": 8642
+        "ms": 10833
+      }
+    ]
+  },
+  {
+    "name": "0x098B716B8Aaf21512996dC57EB0615e2383E2f96",
+    "kind": "wallet",
+    "expect": true,
+    "decision": "held_match",
+    "checks": [
+      {
+        "miner": "64175",
+        "minerName": "OathCast Sanctions Screen",
+        "kind": "wallet",
+        "subject": "0x098B716B8Aaf21512996dC57EB0615e2383E2f96",
+        "verdict": "match",
+        "status": 200,
+        "answeredBy": "64175",
+        "echoed": "0x098B716B8Aaf21512996dC57EB0615e2383E2f96",
+        "result": {
+          "name": "0x098B716B8Aaf21512996dC57EB0615e2383E2f96",
+          "matched": true,
+          "matches": [
+            "LAZARUS GROUP"
+          ],
+          "lists": [
+            "OFAC SDN",
+            "OFAC Consolidated (non-SDN)",
+            "UN Security Council Consolidated",
+            "EU Consolidated Financial Sanctions"
+          ],
+          "match_score": 1
+        },
+        "fieldStatus": {
+          "name": "ok",
+          "matched": "ok",
+          "matches": "ok",
+          "lists": "ok",
+          "match_score": "ok"
+        },
+        "receipt": {
+          "receipt_hash": "0x70bb649eee0091c3b7b1e8db5f0badce8c10aef4109976eead9f06d1e0dc4fbe",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
+          "miner": "5287",
+          "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
+          "amount_uusdc": "10000",
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998625
+        },
+        "ms": 6792
+      }
+    ]
+  },
+  {
+    "name": "0x7F367cC41522cE07553e823bf3be79A889DEbe1B",
+    "kind": "wallet",
+    "expect": true,
+    "decision": "held_match",
+    "checks": [
+      {
+        "miner": "64175",
+        "minerName": "OathCast Sanctions Screen",
+        "kind": "wallet",
+        "subject": "0x7F367cC41522cE07553e823bf3be79A889DEbe1B",
+        "verdict": "match",
+        "status": 200,
+        "answeredBy": "64175",
+        "echoed": "0x7F367cC41522cE07553e823bf3be79A889DEbe1B",
+        "result": {
+          "name": "0x7F367cC41522cE07553e823bf3be79A889DEbe1B",
+          "matched": true,
+          "matches": [
+            "POTEKHIN, Danil"
+          ],
+          "lists": [
+            "OFAC SDN",
+            "OFAC Consolidated (non-SDN)",
+            "UN Security Council Consolidated",
+            "EU Consolidated Financial Sanctions"
+          ],
+          "match_score": 1
+        },
+        "fieldStatus": {
+          "name": "ok",
+          "matched": "ok",
+          "matches": "ok",
+          "lists": "ok",
+          "match_score": "ok"
+        },
+        "receipt": {
+          "receipt_hash": "0x0699cf968317ab990a309d7fc9d85332148b05752f88a563d3ec8d76c111c0dc",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
+          "miner": "5287",
+          "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
+          "amount_uusdc": "10000",
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998632
+        },
+        "ms": 6420
+      }
+    ]
+  },
+  {
+    "name": "0x7a3f0c5e1b2d4968a0c7e5b1d3f2a4c6e8b0d1f2",
+    "kind": "wallet",
+    "expect": false,
+    "decision": "screened",
+    "checks": [
+      {
+        "miner": "64175",
+        "minerName": "OathCast Sanctions Screen",
+        "kind": "wallet",
+        "subject": "0x7a3f0c5e1b2d4968a0c7e5b1d3f2a4c6e8b0d1f2",
+        "verdict": "clean",
+        "status": 200,
+        "answeredBy": "64175",
+        "echoed": "0x7a3f0c5e1b2d4968a0c7e5b1d3f2a4c6e8b0d1f2",
+        "result": {
+          "name": "0x7a3f0c5e1b2d4968a0c7e5b1d3f2a4c6e8b0d1f2",
+          "matched": false,
+          "matches": null,
+          "lists": [
+            "OFAC SDN",
+            "OFAC Consolidated (non-SDN)",
+            "UN Security Council Consolidated",
+            "EU Consolidated Financial Sanctions"
+          ],
+          "match_score": 0
+        },
+        "fieldStatus": {
+          "name": "ok",
+          "matched": "ok",
+          "matches": "missing",
+          "lists": "ok",
+          "match_score": "ok"
+        },
+        "receipt": {
+          "receipt_hash": "0x0ecd343ab6c7dae1909537c9a47e6661decd7744bd4139808c999779f63aebb0",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
+          "miner": "5287",
+          "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
+          "amount_uusdc": "10000",
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998638
+        },
+        "ms": 6680
+      }
+    ]
+  },
+  {
+    "name": "0x8f1c4e7a0d3b6952cf8e1b4a7d0c3f6b9e2a5d34",
+    "kind": "wallet",
+    "expect": false,
+    "decision": "screened",
+    "checks": [
+      {
+        "miner": "64175",
+        "minerName": "OathCast Sanctions Screen",
+        "kind": "wallet",
+        "subject": "0x8f1c4e7a0d3b6952cf8e1b4a7d0c3f6b9e2a5d34",
+        "verdict": "clean",
+        "status": 200,
+        "answeredBy": "64175",
+        "echoed": "0x8f1c4e7a0d3b6952cf8e1b4a7d0c3f6b9e2a5d34",
+        "result": {
+          "name": "0x8f1c4e7a0d3b6952cf8e1b4a7d0c3f6b9e2a5d34",
+          "matched": false,
+          "matches": null,
+          "lists": [
+            "OFAC SDN",
+            "OFAC Consolidated (non-SDN)",
+            "UN Security Council Consolidated",
+            "EU Consolidated Financial Sanctions"
+          ],
+          "match_score": 0
+        },
+        "fieldStatus": {
+          "name": "ok",
+          "matched": "ok",
+          "matches": "missing",
+          "lists": "ok",
+          "match_score": "ok"
+        },
+        "receipt": {
+          "receipt_hash": "0xe45dc05cf9f84e77b7d45886c865f5ddff64124ad0081a6e45ab3b3f1fb9b75a",
+          "rail": "escrow",
+          "payer": "0x4c8e60d549fa427da628882d76d4df8287e03e59",
+          "miner": "5287",
+          "intent": "SANCTIONS_SCREENING_MATCH_GENERAL",
+          "amount_uusdc": "10000",
+          "epoch_id": 9,
+          "settlement": "epoch",
+          "chain": "telegraph",
+          "timestamp": 1794998645
+        },
+        "ms": 6828
       }
     ]
   }

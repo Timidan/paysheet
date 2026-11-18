@@ -2,16 +2,16 @@
 
 Pay your contractors in USDC; every payment carries the sanctions screen that was run before it.
 
-Paysheet takes a sheet of payees (name, wallet, amount). Before any money moves it buys three sanctions checks per row from named providers on [Telegraph](https://telegraphprotocol.com/), paying for each one itself over x402. A row is paid only if all three checks answer "no match" in so many words. Anything else is held, with the reason shown.
+Paysheet takes a sheet of payees (name, wallet, amount). Before any money moves it buys three sanctions checks per row from named providers on [Telegraph](https://telegraphprotocol.com/), paying for each one itself from a prepaid Telegraph balance. A row is paid only if all three checks answer "no match" in so many words and none of them scores the name as close to a listed one. Anything else is held, with the reason shown.
 
 Live: https://paysheet.timidan.xyz
 
-Testnet only: Base Sepolia and test USDC. Built for Telegraph Hackathon Season II, Mission 02 (Stablecoin).
+Testnet only. Payments are test USDC on Base Sepolia; the checks are charged to a prepaid Telegraph balance on Ethereum Sepolia. Built for Telegraph Hackathon Season II, Mission 02 (Stablecoin).
 
 ## What happens to a row
 
-1. **Screen.** The payee's name goes to two providers and the wallet address goes to one. Each request costs 0.01 test USDC, paid by the app's own wallet with a signed x402 payment. No person approves it.
-2. **Decide.** All three say "no match": the row can be paid. A match: held. A provider that errors, answers for a different name, or leaves the match field empty: held as unresolved. A missing answer never counts as a pass.
+1. **Screen.** The payee's name goes to two providers and the wallet address goes to one. Each request costs 0.01 test USDC, charged to the app's prepaid Telegraph escrow balance against a signed request. No person approves it.
+2. **Decide.** All three say "no match": the row can be paid. A match, or a "no match" with a similarity score of 0.7 or more: held. A provider that errors, answers for a different name, or leaves the match field empty: held as unresolved. A missing answer never counts as a pass.
 3. **Pay.** Each payment is a plain USDC `transfer` with a 32-byte fingerprint of the screen appended to the call data. The fingerprint is the hash of the name, wallet, amount, the three Telegraph receipts and the time of the screen, so the transfer on the explorer points back to the checks that allowed it.
 4. **Record.** Every run has a public page with each row's checks, the Telegraph receipt hashes, and the transfer.
 
@@ -25,10 +25,10 @@ A held name can be released by the person who made the sheet, with a written rea
 |---|---|
 | Intent | `SANCTIONS_SCREENING_MATCH_GENERAL` |
 | Node | `https://devnode.telegraphprotocol.com/engine/v1/ask/{minerId}` |
-| Name checks | miner 731002 (Counterproof Sanctions Screener) and miner 710637 (Sanctions Name Evidence) |
-| Wallet check | miner 731002 |
+| Name checks | miner 64175 (OathCast Sanctions Screen) and miner 710637 (Sanctions Name Evidence) |
+| Wallet check | miner 64175 |
 | Price | 0.01 test USDC per request, three requests per row |
-| Payment | x402 on Base Sepolia, gasless signature, receipt in the `x-telegraph-receipt` header |
+| Payment | Telegraph escrow on Ethereum Sepolia (`scheme: escrow`): one deposit, then a signed message per request; receipt in the `x-payment-response` header |
 
 Requests go to named providers, not to the routed endpoint. In our paid test on 13 Nov 2026 the routed endpoint sent every request to one general provider that answered "no match" for all ten listed names we tried.
 
@@ -36,13 +36,34 @@ The app also runs on its own once a day: it screens the sample sheet and pays th
 
 ## Evidence
 
-- `test/fixtures/live-names.json` holds the recorded answers from a paid run through this code: 10 listed names, 10 invented names, with their receipts. All 10 listed names were held and all 10 invented names passed.
+- `test/fixtures/live-names.json` holds the recorded answers from a paid run through this code on 18 Nov 2026: 10 listed names, 10 invented names, 5 common names and 4 wallet addresses, with their receipts. All 10 listed names and both listed wallets were held; all 10 invented names and both unlisted wallets passed.
+- What that run also showed: one provider answered "no match" for Gazprombank with a similarity score of 0.73, and the 0.7 rule is what holds it there. The same rule holds four of the five common names (for example Maria Garcia), which a person can release with a reason. Two listed wallets is a small sample, and one provider screens wallets.
 - `npm test` replays those answers through the pay-or-hold rule.
-- `PAYSHEET_KEY_FILE=<key file> node scripts/live-check.mjs` repeats the paid run (about 0.5 test USDC).
+- `PAYSHEET_KEY_FILE=<key file> node scripts/live-check.mjs` repeats the paid run (0.54 test USDC from the key's Telegraph balance).
 
 ## Run it
 
 You need Node 22 or newer, and a wallet key file that holds test USDC on Base Sepolia ([Circle's faucet](https://faucet.circle.com/)). The same wallet needs a little Base Sepolia ETH if you want the app to send small payments itself.
+
+The checks are paid from a Telegraph escrow balance on Ethereum Sepolia, which the same wallet funds once. The test USDC there can be minted by anyone; the wallet needs a little Sepolia ETH for the three transactions. `$ME` is the wallet's address and `$KEY_FILE` its key file:
+
+```bash
+export RPC=https://ethereum-sepolia-rpc.publicnode.com USDC=0xcc194e1a843B658526D0D5C431f670028582Ae17 DIAMOND=0x72a70e949362670Bf8bceAd24eFC5b8f950aa08b
+```
+
+```bash
+cast send $USDC "mint(address,uint256)" $ME 5000000 --rpc-url $RPC --private-key "$(cat $KEY_FILE)"
+```
+
+```bash
+cast send $USDC "approve(address,uint256)" $DIAMOND 5000000 --rpc-url $RPC --private-key "$(cat $KEY_FILE)"
+```
+
+```bash
+cast send $DIAMOND "depositUSDC(uint256)" 5000000 --rpc-url $RPC --private-key "$(cat $KEY_FILE)"
+```
+
+The node counts the deposit about ten minutes later. Until then every check is refused and every row is held.
 
 ```bash
 npm install
@@ -61,7 +82,7 @@ The second command builds the pages in `web/` (React, Tailwind, Motion). Open ht
 Try it:
 
 1. The home page shows the latest scheduled run of the sample sheet: three rows pass, three are held (a similar name, a listed wallet, a listed name).
-2. Choose "Change the sheet and run it yourself", add a row with a name from a sanctions list, and press "Screen this sheet". That row is held; the others pass and can be paid.
+2. Choose "Change the sheet and run it yourself", add a row with a well-known listed name such as Rosneft, and press "Screen this sheet". That row is held; the others pass and can be paid.
 3. Open a held row to see which provider said what, and the receipt hash for each request.
 
 Settings:
@@ -83,5 +104,5 @@ Settings:
 
 - Names and wallet addresses are screened against the lists the providers hold. Those lists are dated snapshots.
 - "No match" is not legal clearance. Paysheet calls a row screened, never cleared.
-- No checks by date of birth or country, no fiat, one chain, no approvals by several people.
+- No checks by date of birth or country, no fiat, payouts on one chain, no approvals by several people.
 - Runs are stored in one JSON file. That suits a demo, not production.
