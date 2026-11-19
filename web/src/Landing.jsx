@@ -96,7 +96,7 @@ function Walkthrough({ sample }) {
     return `${ordinals[i] || `Check ${i + 1}`} name check`;
   });
   const STEPS = ["Listed on the sheet", ...checkSteps, "Decided"];
-  const totalChecks = sampleChecks.length || 4;
+  const totalChecks = sampleChecks.length;
   const stepsPerPayee = STEPS.length;
   const totalBeats = stepsPerPayee * 2;
 
@@ -114,7 +114,7 @@ function Walkthrough({ sample }) {
   const head = (
     <div className="max-w-[30ch]">
       <h2 className="text-[clamp(28px,3.6vw,44px)] font-semibold leading-[1.05] tracking-[-0.03em]">{checkWordCap} checks, then the money moves or it does not.</h2>
-      <p className="mt-4 text-[17px] text-soft">Paysheet buys each check itself, from providers it names, for one cent. A row is paid only when all {checkWord} say no match.</p>
+      <p className="mt-4 text-[17px] text-soft">{totalChecks ? `Paysheet buys each check itself, from providers it names, for one cent. A row is paid only when all ${checkWord} say no match.` : `Paysheet buys each check itself, from providers it names, for one cent once a run starts.`}</p>
     </div>
   );
   if (still) {
@@ -122,7 +122,7 @@ function Walkthrough({ sample }) {
       <section id="how" className="border-t border-line bg-wash/50">
         <div className="mx-auto grid max-w-[1120px] gap-10 px-4 py-24 sm:px-6">
           {head}
-          <div className="grid gap-8 md:grid-cols-2"><Slip row={clean} done={(clean.checks?.length || 4) + 1} /><Slip row={listed} done={(listed.checks?.length || 4) + 1} /></div>
+          <div className="grid gap-8 md:grid-cols-2"><Slip row={clean} done={(clean.checks?.length ?? 0) + 1} /><Slip row={listed} done={(listed.checks?.length ?? 0) + 1} /></div>
         </div>
       </section>
     );
