@@ -46,7 +46,7 @@ const answer = { clean: "No match", match: "Match", unresolved: "No clear answer
 // When `done > totalChecks`, all checks are completed and the decision stamp is rendered.
 function Slip({ row, done }) {
   const held = isHeld(row);
-  const totalChecks = row.checks?.length || 4;
+  const totalChecks = row.checks?.length ?? 4;
   const decided = done > totalChecks;
   return (
     <div className={`relative mx-auto w-full max-w-[540px] rounded-[10px] border-2 bg-sheet px-5 py-5 shadow-[0_22px_50px_-26px_rgba(16,35,28,0.5)] transition-colors duration-300 sm:px-7 sm:py-6 ${decided ? (held ? "border-held" : "border-green") : "border-line"}`}>
@@ -73,7 +73,7 @@ function Slip({ row, done }) {
       </ol>
       <div className="mt-5 flex min-h-[46px] items-center justify-between gap-4 border-t border-ink/80 pt-4">
         <span className="text-[14.5px]">
-          {!decided ? <span className="text-soft">Nothing moves until all {totalChecks} are back</span> : held ? heldReason(row) : row.pay?.tx ? <Tx hash={row.pay.tx}>Transfer {short(row.pay.tx, 8, 6)}</Tx> : "Ready to pay"}
+          {!decided ? <span className="text-soft">{totalChecks ? `Nothing moves until all ${totalChecks} are back` : "Nothing moves until checks are back"}</span> : held ? heldReason(row) : row.pay?.tx ? <Tx hash={row.pay.tx}>Transfer {short(row.pay.tx, 8, 6)}</Tx> : "Ready to pay"}
         </span>
         {decided && <Stamp kind={held ? "held" : "paid"} word={held ? "Held" : "Paid"} size="text-[22px]" />}
       </div>
@@ -164,7 +164,7 @@ function Proof({ sample }) {
   const [hover, setHover] = useState(3);
   const [copied, setCopied] = useState(false);
   if (!row) return null;
-  const count = row.checks?.length || 4;
+  const count = row.checks?.length ?? 4;
   const countWord = ["zero", "one", "two", "three", "four", "five"][count] || String(count);
   const amount = BigInt(Math.round(Number(row.amount) * 1e6)).toString(16).padStart(64, "0");
   const parts = [
