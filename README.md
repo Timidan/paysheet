@@ -2,7 +2,7 @@
 
 Pay your contractors in USDC; every payment carries the sanctions screen that was run before it.
 
-Paysheet takes a sheet of payees (name, wallet, amount). Before any money moves it buys three sanctions checks per row from named providers on [Telegraph](https://telegraphprotocol.com/), paying for each one itself over x402. A row is paid only if all three checks answer "no match" in so many words. Anything else is held, with the reason shown.
+Paysheet takes a sheet of payees (name, wallet, amount). Before any money moves it buys four sanctions checks per row from named providers on [Telegraph](https://telegraphprotocol.com/), paying for each one itself over x402. A row is paid only if all four checks answer "no match" in so many words. Anything else is held, with the reason shown.
 
 Live: https://paysheet.timidan.xyz
 
@@ -10,9 +10,9 @@ Testnet only: Base Sepolia and test USDC. Built for Telegraph Hackathon Season I
 
 ## What happens to a row
 
-1. **Screen.** The payee's name goes to two providers and the wallet address goes to one. Each request costs 0.01 test USDC, paid by the app's own wallet with a signed x402 payment. No person approves it.
-2. **Decide.** All three say "no match": the row can be paid. A match: held. A provider that errors, answers for a different name, or leaves the match field empty: held as unresolved. A missing answer never counts as a pass.
-3. **Pay.** Each payment is a plain USDC `transfer` with a 32-byte fingerprint of the screen appended to the call data. The fingerprint is the hash of the name, wallet, amount, the three Telegraph receipts and the time of the screen, so the transfer on the explorer points back to the checks that allowed it.
+1. **Screen.** The payee's name goes to three providers and the wallet address goes to one. Each request costs 0.01 test USDC, paid by the app's own wallet with a signed x402 payment. No person approves it.
+2. **Decide.** All four say "no match": the row can be paid. A match: held. A provider that errors, answers for a different name, or leaves the match field empty: held as unresolved. A missing answer never counts as a pass.
+3. **Pay.** Each payment is a plain USDC `transfer` with a 32-byte fingerprint of the screen appended to the call data. The fingerprint is the hash of the name, wallet, amount, the Telegraph receipts and the time of the screen, so the transfer on the explorer points back to the checks that allowed it.
 4. **Record.** Every run has a public page with each row's checks, the Telegraph receipt hashes, and the transfer.
 
 If a provider is down or answers with empty fields, the row is held as unresolved. The app's own daily run screens again within the hour, and the home page keeps showing the last sample that every provider answered. This happened on 14 Nov 2026: both providers returned empty answers for one run, six rows were held, and the next run an hour or so later paid the three clean ones.
@@ -25,9 +25,9 @@ A held name can be released by the person who made the sheet, with a written rea
 |---|---|
 | Intent | `SANCTIONS_SCREENING_MATCH_GENERAL` |
 | Node | `https://devnode.telegraphprotocol.com/engine/v1/ask/{minerId}` |
-| Name checks | miner 731002 (Counterproof Sanctions Screener) and miner 710637 (Sanctions Name Evidence) |
+| Name checks | miner 731002 (Counterproof Sanctions Screener), miner 710637 (Sanctions Name Evidence), and miner 5281 (Praman Desk Compliance Screener) |
 | Wallet check | miner 731002 |
-| Price | 0.01 test USDC per request, three requests per row |
+| Price | 0.01 test USDC per request, four requests per row |
 | Payment | x402 on Base Sepolia, gasless signature, receipt in the `x-telegraph-receipt` header |
 
 Requests go to named providers, not to the routed endpoint. In our paid test on 13 Nov 2026 the routed endpoint sent every request to one general provider that answered "no match" for all ten listed names we tried.
@@ -38,7 +38,7 @@ The app also runs on its own once a day: it screens the sample sheet and pays th
 
 - `test/fixtures/live-names.json` holds the recorded answers from a paid run through this code: 10 listed names, 10 invented names, with their receipts. All 10 listed names were held and all 10 invented names passed.
 - `npm test` replays those answers through the pay-or-hold rule.
-- `PAYSHEET_KEY_FILE=<key file> node scripts/live-check.mjs` repeats the paid run (about 0.5 test USDC).
+- `PAYSHEET_KEY_FILE=<key file> node scripts/live-check.mjs` repeats the paid run (75 requests, about 0.75 test USDC).
 
 ## Run it
 

@@ -80,24 +80,40 @@ function Slip({ row, done }) {
   );
 }
 
-const STEPS = ["Listed on the sheet", "First name check", "Second name check", "Third name check", "Wallet check", "Decided"];
 function Walkthrough({ sample }) {
   const ref = useRef(null);
   const still = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
   const clean = sample.rows.find((r) => r.pay?.state === "paid") || sample.rows[0];
   const listed = sample.rows.find((r) => isHeld(r) && r.checks.filter((c) => c.verdict === "match").length > 1) || sample.rows.find(isHeld) || clean;
-  // Twelve beats: six per payee. The slip only ever shows a whole state, so it is never half drawn.
+
+  // Dynamically derive check sequence and steps from the sample rows so it cleanly adapts to persisted or fresh samples
+  const sampleChecks = clean?.checks || listed?.checks || [];
+  const checkSteps = sampleChecks.map((c, i) => {
+    if (c.kind === "wallet") return "Wallet check";
+    const ordinals = ["First", "Second", "Third", "Fourth", "Fifth"];
+    return `${ordinals[i] || `Check ${i + 1}`} name check`;
+  });
+  const STEPS = ["Listed on the sheet", ...checkSteps, "Decided"];
+  const totalChecks = sampleChecks.length || 4;
+  const stepsPerPayee = STEPS.length;
+  const totalBeats = stepsPerPayee * 2;
+
+  // Beats per payee: slip only ever shows a whole state, so it is never half drawn.
   const [beat, setBeat] = useState(0);
-  useMotionValueEvent(scrollYProgress, "change", (v) => setBeat(Math.min(11, Math.max(0, Math.floor(v * 12)))));
+  useMotionValueEvent(scrollYProgress, "change", (v) => setBeat(Math.min(totalBeats - 1, Math.max(0, Math.floor(v * totalBeats)))));
   const turn = useTransform(scrollYProgress, [0, 1], [0, 150]);
   const inkColor = useTransform(scrollYProgress, [0.46, 0.54], ["#0d5a3c", "#b0301a"]);
-  const second = beat > 5;
-  const step = second ? beat - 6 : beat;
+  const second = beat >= stepsPerPayee;
+  const step = second ? beat - stepsPerPayee : beat;
+
+  const checkWord = ["zero", "one", "two", "three", "four", "five"][totalChecks] || String(totalChecks);
+  const checkWordCap = checkWord.charAt(0).toUpperCase() + checkWord.slice(1);
+
   const head = (
     <div className="max-w-[30ch]">
-      <h2 className="text-[clamp(28px,3.6vw,44px)] font-semibold leading-[1.05] tracking-[-0.03em]">Four checks, then the money moves or it does not.</h2>
-      <p className="mt-4 text-[17px] text-soft">Paysheet buys each check itself, from providers it names, for one cent. A row is paid only when all four say no match.</p>
+      <h2 className="text-[clamp(28px,3.6vw,44px)] font-semibold leading-[1.05] tracking-[-0.03em]">{checkWordCap} checks, then the money moves or it does not.</h2>
+      <p className="mt-4 text-[17px] text-soft">Paysheet buys each check itself, from providers it names, for one cent. A row is paid only when all {checkWord} say no match.</p>
     </div>
   );
   if (still) {
@@ -116,7 +132,7 @@ function Walkthrough({ sample }) {
         <div className="mx-auto grid w-full max-w-[1120px] items-center gap-6 px-4 sm:px-6 md:grid-cols-[1fr_1.15fr] md:gap-8">
           <div>
             <div className="max-md:hidden">{head}</div>
-            <h2 className="text-[26px] font-semibold leading-[1.08] tracking-[-0.03em] md:hidden">Four checks, then the money moves or it does not.</h2>
+            <h2 className="text-[26px] font-semibold leading-[1.08] tracking-[-0.03em] md:hidden">{checkWordCap} checks, then the money moves or it does not.</h2>
             <ol className="mt-5 hidden gap-1.5 text-[15px] md:grid" aria-hidden="true">
               {STEPS.map((s, i) => (
                 <li key={s} className={`flex items-center gap-3 transition-colors duration-200 ${i === step ? "font-semibold text-ink" : i < step ? "text-soft" : "text-soft/60"}`}>

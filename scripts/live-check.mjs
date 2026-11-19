@@ -1,4 +1,4 @@
-// Paid check of the real code path: 25 names through both name miners (50 requests, $0.50 test USDC).
+// Paid check of the real code path: 25 names through three name miners (75 requests, $0.75 test USDC).
 // Saves the answers as the fixture that `npm test` replays.
 // Run: PAYSHEET_KEY_FILE=~/.some-test-key node scripts/live-check.mjs
 import { readFileSync, writeFileSync } from "node:fs";
