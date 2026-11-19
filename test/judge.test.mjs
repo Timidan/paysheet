@@ -3,7 +3,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { judge, decide } from "../src/screen.mjs";
+import { judge, decide, screenRow, NAME_MINERS } from "../src/screen.mjs";
 
 const rows = JSON.parse(readFileSync(new URL("./fixtures/live-names.json", import.meta.url)));
 
@@ -41,4 +41,17 @@ test("praman desk miner 5281 answers evaluate correctly through judge", () => {
   // 3-way consensus with Praman Desk
   assert.equal(decide(["clean", "clean", "clean"]), "screened");
   assert.equal(decide(["clean", "clean", "match"]), "held_match");
+});
+
+test("screenRow invokes all NAME_MINERS including Praman Desk 5281", async () => {
+  const queriedMiners = [];
+  const mockAsk = async (miner, subject, kind) => {
+    queriedMiners.push(miner);
+    return { miner, minerName: "Test", kind, subject, verdict: "clean", status: 200, receipt: { receipt_hash: "0x123" } };
+  };
+  const row = { name: "Alice", wallet: "0x0000000000000000000000000000000000000001", amount: "100" };
+  const res = await screenRow(mockAsk, row);
+  assert.equal(res.decision, "screened");
+  assert.ok(queriedMiners.includes("5281"), "Miner 5281 must be queried in screenRow");
+  assert.equal(queriedMiners.length, 4); // 3 name miners + 1 wallet miner
 });

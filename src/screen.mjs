@@ -16,7 +16,7 @@ export const MINERS = {
   "710637": "Sanctions Name Evidence",
   "5281": "Praman Desk Compliance Screener",
 };
-export const NAME_MINERS = ["731002", "710637"];
+export const NAME_MINERS = ["731002", "710637", "5281"];
 export const WALLET_MINER = "731002";
 
 // One answer -> "clean" | "match" | "unresolved".
