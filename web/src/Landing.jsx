@@ -88,8 +88,9 @@ function Walkthrough({ sample }) {
   const clean = sample.rows.find((r) => r.pay?.state === "paid") || sample.rows[0];
   const listed = sample.rows.find((r) => isHeld(r) && r.checks.filter((c) => c.verdict === "match").length > 1) || sample.rows.find(isHeld) || clean;
 
-  // Dynamically derive check sequence and steps from the sample rows so it cleanly adapts to persisted or fresh samples
-  const sampleChecks = clean?.checks || listed?.checks || [];
+  // Dynamically derive check sequence and steps from a row with checks so it cleanly adapts to persisted or fresh samples
+  const rowWithChecks = sample.rows?.find((r) => r.checks?.length > 0);
+  const sampleChecks = clean?.checks?.length ? clean.checks : listed?.checks?.length ? listed.checks : rowWithChecks?.checks || [];
   const checkSteps = sampleChecks.map((c, i) => {
     if (c.kind === "wallet") return "Wallet check";
     const ordinals = ["First", "Second", "Third", "Fourth", "Fifth"];
