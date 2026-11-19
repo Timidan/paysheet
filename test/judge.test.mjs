@@ -30,3 +30,15 @@ test("anything that is not an explicit valid no-match holds", () => {
   assert.equal(decide(["clean", "clean", "unresolved"]), "held_unresolved");
   assert.equal(decide(["clean", "match", "clean"]), "held_match");
 });
+
+test("praman desk miner 5281 answers evaluate correctly through judge", () => {
+  const pramanOk = { miner_id: "5281", input: { name: "Safe Contractor LLC" }, result: { matched: false, match_score: 0 }, field_status: { matched: "ok" } };
+  assert.equal(judge("5281", "Safe Contractor LLC", 200, pramanOk), "clean");
+
+  const pramanMatch = { miner_id: "5281", input: { name: "Lazarus Group" }, result: { matched: true, match_score: 1.0 }, field_status: { matched: "ok" } };
+  assert.equal(judge("5281", "Lazarus Group", 200, pramanMatch), "match");
+
+  // 3-way consensus with Praman Desk
+  assert.equal(decide(["clean", "clean", "clean"]), "screened");
+  assert.equal(decide(["clean", "clean", "match"]), "held_match");
+});

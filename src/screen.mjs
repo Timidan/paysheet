@@ -9,10 +9,12 @@ export const NETWORK = "eip155:84532"; // Base Sepolia
 export const USDC = "0x036CbD53842c5426634e7929541eC2318f3dCF7e";
 export const PRICE_UUSDC = 10000; // $0.01 per request
 
-// Two independent miners screen the name; the first also screens the wallet.
+// Independent miners screen the name; the first also screens the wallet.
+// Miner 5281 (Praman Desk) provides in-memory OFAC SDN lookup across 19,565 entities in RAM.
 export const MINERS = {
   "731002": "Counterproof Sanctions Screener",
   "710637": "Sanctions Name Evidence",
+  "5281": "Praman Desk Compliance Screener",
 };
 export const NAME_MINERS = ["731002", "710637"];
 export const WALLET_MINER = "731002";
