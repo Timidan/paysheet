@@ -42,10 +42,12 @@ function Rosette({ rotate, color }) {
 }
 
 const answer = { clean: "No match", match: "Match", unresolved: "No clear answer" };
-// One payee on a pay slip. `done` is how many checks have come back (0 to 3); 4 means decided.
+// One payee on a pay slip. `done` is how many checks have come back.
+// When `done > totalChecks`, all checks are completed and the decision stamp is rendered.
 function Slip({ row, done }) {
   const held = isHeld(row);
-  const decided = done > 3;
+  const totalChecks = row.checks?.length ?? 4;
+  const decided = done > totalChecks;
   return (
     <div className={`relative mx-auto w-full max-w-[540px] rounded-[10px] border-2 bg-sheet px-5 py-5 shadow-[0_22px_50px_-26px_rgba(16,35,28,0.5)] transition-colors duration-300 sm:px-7 sm:py-6 ${decided ? (held ? "border-held" : "border-green") : "border-line"}`}>
       <div className="flex items-baseline justify-between gap-4">
@@ -71,7 +73,7 @@ function Slip({ row, done }) {
       </ol>
       <div className="mt-5 flex min-h-[46px] items-center justify-between gap-4 border-t border-ink/80 pt-4">
         <span className="text-[14.5px]">
-          {!decided ? <span className="text-soft">Nothing moves until all three are back</span> : held ? heldReason(row) : row.pay?.tx ? <Tx hash={row.pay.tx}>Transfer {short(row.pay.tx, 8, 6)}</Tx> : "Ready to pay"}
+          {!decided ? <span className="text-soft">{totalChecks ? `Nothing moves until all ${totalChecks} are back` : "Nothing moves until checks are back"}</span> : held ? heldReason(row) : row.pay?.tx ? <Tx hash={row.pay.tx}>Transfer {short(row.pay.tx, 8, 6)}</Tx> : "Ready to pay"}
         </span>
         {decided && <Stamp kind={held ? "held" : "paid"} word={held ? "Held" : "Paid"} size="text-[22px]" />}
       </div>
@@ -79,24 +81,40 @@ function Slip({ row, done }) {
   );
 }
 
-const STEPS = ["Listed on the sheet", "First name check", "Second name check", "Wallet check", "Decided"];
 function Walkthrough({ sample }) {
   const ref = useRef(null);
   const still = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
   const clean = sample.rows.find((r) => r.pay?.state === "paid") || sample.rows[0];
   const listed = sample.rows.find((r) => isHeld(r) && r.checks.filter((c) => c.verdict === "match").length > 1) || sample.rows.find(isHeld) || clean;
-  // Ten beats: five per payee. The slip only ever shows a whole state, so it is never half drawn.
+
+  // Dynamically derive check sequence and steps from the sample rows so it cleanly adapts to persisted or fresh samples
+  const sampleChecks = clean?.checks || listed?.checks || [];
+  const checkSteps = sampleChecks.map((c, i) => {
+    if (c.kind === "wallet") return "Wallet check";
+    const ordinals = ["First", "Second", "Third", "Fourth", "Fifth"];
+    return `${ordinals[i] || `Check ${i + 1}`} name check`;
+  });
+  const STEPS = ["Listed on the sheet", ...checkSteps, "Decided"];
+  const totalChecks = sampleChecks.length;
+  const stepsPerPayee = STEPS.length;
+  const totalBeats = stepsPerPayee * 2;
+
+  // Beats per payee: slip only ever shows a whole state, so it is never half drawn.
   const [beat, setBeat] = useState(0);
-  useMotionValueEvent(scrollYProgress, "change", (v) => setBeat(Math.min(9, Math.max(0, Math.floor(v * 10)))));
+  useMotionValueEvent(scrollYProgress, "change", (v) => setBeat(Math.min(totalBeats - 1, Math.max(0, Math.floor(v * totalBeats)))));
   const turn = useTransform(scrollYProgress, [0, 1], [0, 150]);
   const inkColor = useTransform(scrollYProgress, [0.46, 0.54], ["#0d5a3c", "#b0301a"]);
-  const second = beat > 4;
-  const step = second ? beat - 5 : beat;
+  const second = beat >= stepsPerPayee;
+  const step = second ? beat - stepsPerPayee : beat;
+
+  const checkWord = ["zero", "one", "two", "three", "four", "five"][totalChecks] || String(totalChecks);
+  const checkWordCap = checkWord.charAt(0).toUpperCase() + checkWord.slice(1);
+
   const head = (
     <div className="max-w-[30ch]">
-      <h2 className="text-[clamp(28px,3.6vw,44px)] font-semibold leading-[1.05] tracking-[-0.03em]">Three checks, then the money moves or it does not.</h2>
-      <p className="mt-4 text-[17px] text-soft">Paysheet buys each check itself, from providers it names, for one cent. A row is paid only when all three say no match.</p>
+      <h2 className="text-[clamp(28px,3.6vw,44px)] font-semibold leading-[1.05] tracking-[-0.03em]">{checkWordCap} checks, then the money moves or it does not.</h2>
+      <p className="mt-4 text-[17px] text-soft">{totalChecks ? `Paysheet buys each check itself, from providers it names, for one cent. A row is paid only when all ${checkWord} say no match.` : `Paysheet buys each check itself, from providers it names, for one cent once a run starts.`}</p>
     </div>
   );
   if (still) {
@@ -104,7 +122,7 @@ function Walkthrough({ sample }) {
       <section id="how" className="border-t border-line bg-wash/50">
         <div className="mx-auto grid max-w-[1120px] gap-10 px-4 py-24 sm:px-6">
           {head}
-          <div className="grid gap-8 md:grid-cols-2"><Slip row={clean} done={4} /><Slip row={listed} done={4} /></div>
+          <div className="grid gap-8 md:grid-cols-2"><Slip row={clean} done={(clean.checks?.length ?? 0) + 1} /><Slip row={listed} done={(listed.checks?.length ?? 0) + 1} /></div>
         </div>
       </section>
     );
@@ -115,7 +133,7 @@ function Walkthrough({ sample }) {
         <div className="mx-auto grid w-full max-w-[1120px] items-center gap-6 px-4 sm:px-6 md:grid-cols-[1fr_1.15fr] md:gap-8">
           <div>
             <div className="max-md:hidden">{head}</div>
-            <h2 className="text-[26px] font-semibold leading-[1.08] tracking-[-0.03em] md:hidden">Three checks, then the money moves or it does not.</h2>
+            <h2 className="text-[26px] font-semibold leading-[1.08] tracking-[-0.03em] md:hidden">{checkWordCap} checks, then the money moves or it does not.</h2>
             <ol className="mt-5 hidden gap-1.5 text-[15px] md:grid" aria-hidden="true">
               {STEPS.map((s, i) => (
                 <li key={s} className={`flex items-center gap-3 transition-colors duration-200 ${i === step ? "font-semibold text-ink" : i < step ? "text-soft" : "text-soft/60"}`}>
@@ -146,12 +164,14 @@ function Proof({ sample }) {
   const [hover, setHover] = useState(3);
   const [copied, setCopied] = useState(false);
   if (!row) return null;
+  const count = row.checks?.length ?? 4;
+  const countWord = ["zero", "one", "two", "three", "four", "five"][count] || String(count);
   const amount = BigInt(Math.round(Number(row.amount) * 1e6)).toString(16).padStart(64, "0");
   const parts = [
     { text: "0xa9059cbb", says: "Transfer", note: "The standard USDC transfer call." },
     { text: row.wallet.slice(2).toLowerCase().padStart(64, "0"), says: "To", note: `Pays ${row.name}.` },
     { text: amount, says: "Amount", note: `${usdc(row.amount)} USDC.` },
-    { text: row.screenHash.slice(2), says: "Screen fingerprint", note: "A hash of the payee, the amount and the three Telegraph receipts. USDC ignores this extra data and the chain keeps it." },
+    { text: row.screenHash.slice(2), says: "Screen fingerprint", note: `A hash of the payee, the amount and the ${countWord} Telegraph receipts. USDC ignores this extra data and the chain keeps it.` },
   ];
   const copy = () => navigator.clipboard?.writeText(row.screenHash).then(() => { setCopied(true); setTimeout(() => setCopied(false), 1400); });
   return (
