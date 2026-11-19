@@ -5,7 +5,7 @@ import { readFileSync, writeFileSync, renameSync, existsSync, mkdirSync } from "
 import { randomBytes } from "node:crypto";
 import { extname, join, normalize } from "node:path";
 import { fileURLToPath } from "node:url";
-import { makeAsker, screenRow, MINERS, USDC, PRICE_UUSDC } from "./screen.mjs";
+import { makeAsker, screenRow, MINERS, CHECKS_PER_ROW, USDC, PRICE_UUSDC } from "./screen.mjs";
 import { makeDemoPayer, transferData, verifyPayment } from "./chain.mjs";
 
 const ROOT = fileURLToPath(new URL("..", import.meta.url));
@@ -72,7 +72,7 @@ function cleanRows(input) {
 }
 
 function startRun(rows, kind) {
-  const need = rows.length * 3;
+  const need = rows.length * CHECKS_PER_ROW;
   if (spend().requests + need > LIMITS.requestsPerDay)
     throw new Refuse("Today's screening budget is used up. Try again tomorrow.", 429);
   spend().requests += need;
@@ -173,7 +173,7 @@ const routes = {
     const finished = Object.values(db.runs).filter((r) => r.kind === "scheduled" && r.rows.every((x) => x.state === "done"))
       .sort((a, b) => b.createdAt.localeCompare(a.createdAt));
     const latest = finished.find((r) => !unclear(r)) ?? finished[0];
-    return { sample: latest ? view(latest) : null, sampleRows: SAMPLE, limits: LIMITS, miners: MINERS, usdc: USDC, priceUsd: PRICE_UUSDC / 1e6, payer: payer.address };
+    return { sample: latest ? view(latest) : null, sampleRows: SAMPLE, limits: LIMITS, miners: MINERS, checksPerRow: CHECKS_PER_ROW, usdc: USDC, priceUsd: PRICE_UUSDC / 1e6, payer: payer.address };
   },
   "GET /api/runs/:id": ({ id }) => {
     if (!db.runs[id]) throw new Refuse("No such run.", 404);

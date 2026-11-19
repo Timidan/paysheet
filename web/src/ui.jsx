@@ -22,7 +22,7 @@ export function heldReason(row) {
 
 // One word for where a row stands, and the line under it.
 export function standing(row) {
-  if (row.state !== "done") return { kind: "wait", word: "Screening", why: "Buying three checks" };
+  if (row.state !== "done") return { kind: "wait", word: "Screening", why: "Buying screening checks" };
   const p = row.pay;
   if (p?.state === "paid") return { kind: "paid", word: "Paid", why: <Tx hash={p.tx}>{usdc(row.amount)} USDC sent{row.release ? " after release" : ""}</Tx> };
   if (p?.state === "paying") return { kind: "wait", word: "Paying", why: p.tx ? <Tx hash={p.tx}>Transfer sent, confirming</Tx> : "Waiting for the transfer to confirm" };
@@ -30,7 +30,7 @@ export function standing(row) {
   if (row.decision === "screened" || row.release) {
     if (row.expired) return { kind: "wait", word: "Expired", why: "This screen is over 24 hours old. Screen the sheet again before paying." };
     if (p?.state === "failed") return { kind: "ready", word: "Not sent", why: `Payment failed: ${p.error}` };
-    return { kind: "ready", word: row.release ? "Released" : "Screened", why: row.release ? "Released by the payer. Ready to pay." : "No match on all three checks. Ready to pay." };
+    return { kind: "ready", word: row.release ? "Released" : "Screened", why: row.release ? "Released by the payer. Ready to pay." : "No match across screening checks. Ready to pay." };
   }
   return { kind: "held", word: "Held", why: heldReason(row) };
 }

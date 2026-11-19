@@ -16,6 +16,7 @@ export default function Pay() {
   }, [home, rows]);
 
   const max = home?.limits?.rows ?? 10;
+  const checksPerRow = home?.checksPerRow ?? 4;
   const set = (key, field, value) => setRows(rows.map((r) => (r.key === key ? { ...r, [field]: value } : r)));
   const total = (rows || []).reduce((s, r) => s + (Number(r.amount) || 0), 0);
   const small = total <= (home?.limits?.demoRunTotal ?? 0.25);
@@ -61,7 +62,7 @@ export default function Pay() {
             </ul>
             <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3 px-4 py-3 sm:px-5">
               <button type="button" className={link} onClick={() => setRows([...rows, blank()])} disabled={rows.length >= max}>Add a payee</button>
-              <span className="flex items-center gap-2 text-[14px] text-soft"><Telegraph size={15} /> {rows.length * 3} checks, ${(rows.length * 0.03).toFixed(2)}, paid by Paysheet on testnet</span>
+              <span className="flex items-center gap-2 text-[14px] text-soft"><Telegraph size={15} /> {rows.length * checksPerRow} checks, ${(rows.length * checksPerRow * (home?.priceUsd ?? 0.01)).toFixed(2)}, paid by Paysheet on testnet</span>
             </div>
             <div className="flex flex-wrap items-center justify-between gap-3 border-t border-ink/80 px-4 py-3 sm:px-5">
               <span className="text-[14.5px] text-soft">

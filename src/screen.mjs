@@ -18,6 +18,7 @@ export const MINERS = {
 };
 export const NAME_MINERS = ["731002", "710637", "5281"];
 export const WALLET_MINER = "731002";
+export const CHECKS_PER_ROW = NAME_MINERS.length + 1; // 3 name checks + 1 wallet check
 
 // One answer -> "clean" | "match" | "unresolved".
 // Clean only when the miner we named answered the question we sent with an
