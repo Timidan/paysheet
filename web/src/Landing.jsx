@@ -122,7 +122,7 @@ function Walkthrough({ sample }) {
       <section id="how" className="border-t border-line bg-wash/50">
         <div className="mx-auto grid max-w-[1120px] gap-10 px-4 py-24 sm:px-6">
           {head}
-          <div className="grid gap-8 md:grid-cols-2"><Slip row={clean} done={clean.checks?.length || 5} /><Slip row={listed} done={listed.checks?.length || 5} /></div>
+          <div className="grid gap-8 md:grid-cols-2"><Slip row={clean} done={(clean.checks?.length || 4) + 1} /><Slip row={listed} done={(listed.checks?.length || 4) + 1} /></div>
         </div>
       </section>
     );

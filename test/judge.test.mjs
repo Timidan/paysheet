@@ -13,6 +13,7 @@ test("recorded paid answers: every listed name holds, every invented name passes
     const verdicts = checks.map((c) =>
       judge(c.miner, name, c.status, { miner_id: c.answeredBy, input: { name: c.echoed }, result: c.result, field_status: c.fieldStatus }));
     assert.equal(verdicts.length, checks.length, name);
+    assert.ok(verdicts.length === 2 || verdicts.length === NAME_MINERS.length, name);
     if (expect === true) { assert.notEqual(decide(verdicts), "screened", name); listed++; }
     if (expect === false) { assert.equal(decide(verdicts), "screened", name); clean++; }
   }
