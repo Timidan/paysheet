@@ -42,11 +42,12 @@ function Rosette({ rotate, color }) {
 }
 
 const answer = { clean: "No match", match: "Match", unresolved: "No clear answer" };
-// One payee on a pay slip. `done` is how many checks have come back (0 to 4); 5 means decided.
+// One payee on a pay slip. `done` is how many checks have come back.
+// When `done > totalChecks`, all checks are completed and the decision stamp is rendered.
 function Slip({ row, done }) {
   const held = isHeld(row);
   const totalChecks = row.checks?.length || 4;
-  const decided = done >= totalChecks;
+  const decided = done > totalChecks;
   return (
     <div className={`relative mx-auto w-full max-w-[540px] rounded-[10px] border-2 bg-sheet px-5 py-5 shadow-[0_22px_50px_-26px_rgba(16,35,28,0.5)] transition-colors duration-300 sm:px-7 sm:py-6 ${decided ? (held ? "border-held" : "border-green") : "border-line"}`}>
       <div className="flex items-baseline justify-between gap-4">
@@ -163,12 +164,14 @@ function Proof({ sample }) {
   const [hover, setHover] = useState(3);
   const [copied, setCopied] = useState(false);
   if (!row) return null;
+  const count = row.checks?.length || 4;
+  const countWord = ["zero", "one", "two", "three", "four", "five"][count] || String(count);
   const amount = BigInt(Math.round(Number(row.amount) * 1e6)).toString(16).padStart(64, "0");
   const parts = [
     { text: "0xa9059cbb", says: "Transfer", note: "The standard USDC transfer call." },
     { text: row.wallet.slice(2).toLowerCase().padStart(64, "0"), says: "To", note: `Pays ${row.name}.` },
     { text: amount, says: "Amount", note: `${usdc(row.amount)} USDC.` },
-    { text: row.screenHash.slice(2), says: "Screen fingerprint", note: "A hash of the payee, the amount and the four Telegraph receipts. USDC ignores this extra data and the chain keeps it." },
+    { text: row.screenHash.slice(2), says: "Screen fingerprint", note: `A hash of the payee, the amount and the ${countWord} Telegraph receipts. USDC ignores this extra data and the chain keeps it.` },
   ];
   const copy = () => navigator.clipboard?.writeText(row.screenHash).then(() => { setCopied(true); setTimeout(() => setCopied(false), 1400); });
   return (
